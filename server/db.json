@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "Rolename": "walmart4",
+      "listName": "hello",
+      "isAdmin": "no",
+      "id": 1
+    },
+    {
+      "Rolename": "walmart2",
+      "listName": "marble",
+      "isAdmin": "no",
+      "id": 2
+    },
+    {
+      "Rolename": "walmart3",
+      "listName": "hello2",
+      "isAdmin": "no",
+      "id": 3
+    },
+    {
+      "Rolename": "walmart5",
+      "listName": "marble250",
+      "isAdmin": "no",
+      "id": 4
+    }
+  ],
+  "users1": [
+    {
+      "role": "Walmart",
+      "reportName": "Walmart rtp1",
+      "pwb": "Walmart Power BI Dashboard Links",
+      "id": 1
+    },
+    {
+      "role": "Walmart",
+      "reportName": "Walmart Rtp2",
+      "pwb": "Walmart Power BI Dashboard Links\"",
+      "id": 2
+    },
+    {
+      "role": "Walmart2",
+      "reportName": "Walmart Rtp3",
+      "pwb": "power link banks walmart2",
+      "id": 3
+    }
+  ]
+}

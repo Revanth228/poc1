@@ -1,0 +1,26 @@
+<head>    
+    <title>Login Form</title>    
+       
+</head>    
+<body>    
+    <h2>Login Page</h2><br>    
+    <div class="login">    
+    <form [formGroup]="loginform" id="login" method="get">    
+        <label><b>User Name     
+        </b>    
+        </label>    
+        <input formControlName="username" type="text" name="Uname" id="Uname" placeholder="Username">    
+        <br><br>    
+        <label><b>Password     
+        </b>    
+        </label>    
+        <input formControlName="password" type="Password" name="Pass" id="Pass" placeholder="Password">    
+        <br><br>    
+        <input type="button" name="log" id="log" value="Log In Here" (click)="onfun()">       
+        <br><br>    
+         
+    </form>  
+    <!-- {{loginform.value | json}}    -->
+</div>    
+</body>  
+
