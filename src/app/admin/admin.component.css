@@ -2,7 +2,7 @@
 {
     background-color: rgb(10, 163, 163);
     padding:10px;
-    width:100%;
+    width:101%;
     margin-top: -8px;
     margin-left: -8px;
     height: 50px;
@@ -10,7 +10,7 @@
 h1
 {
     margin-left: 300px;
-
+   margin-top: -10px;
 }
 ul
 {
@@ -66,22 +66,22 @@ ul
 #displaytable1
 {
     margin-left: 50px;
-    margin-top: -550px; 
+    margin-top: -580px; 
 }
 #displaytable2
 {
-    margin-left: 280px;
-    margin-top: -550px; 
+    margin-left: 80px;
+    margin-top: -580px; 
 }
 #displaytable3
 {
-    margin-left: 280px;
+    margin-left: 80px;
     margin-top: -550px; 
 }
 .rev
 {
-    margin-top: -220px;
-    margin-left: 1250px;
+    margin-top: -300px;
+    margin-left: 1220px;
 }
 .div6
 {
@@ -89,6 +89,16 @@ margin-top: -570px;
 margin-left: 450px;
 }
 .div7
+{
+margin-top: -570px;
+margin-left: 300px;
+}
+.div8
+{
+margin-top: -570px;
+margin-left: 450px;
+}
+.div9
 {
 margin-top: -570px;
 margin-left: 300px;

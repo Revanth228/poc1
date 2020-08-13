@@ -22,6 +22,7 @@ export class UpdateDashboardComponent implements OnInit{
   constructor(private commonService:CommonService,private router: ActivatedRoute,private router1:Router ) { }
 
   ngOnInit(): void {
+    this.getlatestuser();
     console.log(this.router.snapshot.params.id)
     this.commonService.getCurrentData1(this.router.snapshot.params.id).subscribe((result)=>{
       console.log(result)
@@ -41,6 +42,7 @@ export class UpdateDashboardComponent implements OnInit{
     })
     alert("updated succesfully");
     this.userObj.reset({});
+    this.router1.navigateByUrl("/admin");
 
   }
 //   createRole(myform)
@@ -59,5 +61,11 @@ export class UpdateDashboardComponent implements OnInit{
 //     this.allUser=response
 //   });
 // }
+getlatestuser()
+{
+  this.commonService.getAllUser().subscribe((response)=>{
+    this.allUser=response
+  });
+}
 
 }

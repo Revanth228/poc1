@@ -13,6 +13,8 @@ import { CommonService } from '../service/common.service';
 export class AdminComponent implements OnInit {
   myimage1:string="assets/images/1.png";
   myimage2:string="assets/images/3.jpg";
+  myimage3:string="assets/images/4.jpg";
+  myimage4:string="assets/images/5.jpg";
   popoverTitle = 'Delete';
   popoverMessage = 'Do you really want to delete this data';
   confirmClicked = false;
@@ -98,21 +100,24 @@ export class AdminComponent implements OnInit {
   ]
   allUser: Object;
   allUser1: Object;
-
+ allUser2:object;
   constructor(private router: Router, private commonService:CommonService) { }
 
   ngOnInit(): void {
     this.getlatestuser();
-    // this.getlatestuser1();
+    
+    //  this.getlatestuser1();
   }
   
  Onfunction(nr)
  {
   this.getlatestuser1();
+  this.getlatestuser2();
      // let flag1 =true;
      // return true;
      if(document.getElementsByClassName("div3")){
 
+      
        console.log("inside div3 condition")
      }
      document.getElementById("displaytable1").style.display = "none";
@@ -120,6 +125,8 @@ export class AdminComponent implements OnInit {
      document.getElementById("displaytable3").style.display = "none";
      document.getElementById("displaytable4").style.display = "none";
      document.getElementById("displaytable5").style.display = "none";
+     document.getElementById("displaytable6").style.display = "none";
+     document.getElementById("displaytable7").style.display = "none";
      document.getElementById("displaytable"+nr).style.display = "block";
      
   //    document.getElementById("myTable").addEventListener("click", function(button) {    
@@ -168,5 +175,10 @@ deleteUser1(user)
 edituser(user){
   this.router.navigate(['/UpdateRole']);
 }
- 
+getlatestuser2()
+{
+  this.commonService.getAllUser2().subscribe((response)=>{
+    this.allUser2=response
+  });
+}
 }

@@ -1,0 +1,32 @@
+<div class="col-md-6">
+    <h2 class="text-center">Update-User Form</h2>
+    <form  [formGroup]="createUser" (ngSubmit)="updateUser()" >
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" placeholder="Role" name="Rolename" class="form-control" id="name" formControlName="name" >
+      </div>
+    
+      <div class="form-group">
+        <label for="designation">Password</label>
+        <input type="password" placeholder="List-Name" name="listName" class="form-control" id="designation" formControlName="password" >
+      </div>
+    
+      <div class="form-group">
+        <!-- <label for="empId">Role</label>
+        <input type="text" placeholder="IsAdmin" name="isAdmin" class="form-control" id="employeeid"  formControlName="role" > -->
+        <label for="Role">
+          Role
+        </label>
+        <select  id="role" name="role"  formControlName="role"  class="form-control">
+          <!-- <option value="SRG" >SRG</option>
+          <option value="Walmart">Walmart</option>
+          <option value="Target">Target</option> -->
+          <option *ngFor="let user of allUser" [value]="user.Rolename">{{user.Rolename}}</option>
+        </select>
+      </div>
+    
+      <button type="submit"  class="btn btn-success" >Update</button>
+      <!-- <a routerLink="/admin"><button class="btn btn-success" id="back">Back</button></a> -->
+      <!-- <button class="btn btn-success" (click)="createRole(myForm.value)">Update</button> -->
+    </form>
+    </div>

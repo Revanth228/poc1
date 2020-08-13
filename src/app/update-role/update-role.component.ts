@@ -40,6 +40,7 @@ export class UpdateRoleComponent implements OnInit {
     })
     alert("updated succesfully");
     this.userObj.reset({});
+    this.router1.navigateByUrl("/admin");
 
   }
 //   createRole(myform)

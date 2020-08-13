@@ -2,8 +2,11 @@
     <h2 class="text-center">Update role</h2>
     <form  [formGroup]="userObj" (ngSubmit)="updateDash()">
       <div class="form-group">
-        <label for="name">Role:</label>
-        <input type="text" placeholder="Role" name="Rolename" class="form-control" id="name" formControlName="role" >
+        <!-- <label for="name">Role:</label>
+        <input type="text" placeholder="Role" name="Rolename" class="form-control" id="name" formControlName="role" > -->
+        <select  id="role" name="role"  formControlName="role"  class="form-control">
+          <option *ngFor="let user of allUser" [value]="user.Rolename">{{user.Rolename}}</option>
+        </select>
       </div>
     
       <div class="form-group">
@@ -17,7 +20,7 @@
       </div>
     
       <button type="submit"  class="btn btn-success" >Update</button>
-      <a routerLink="/admin"><button class="btn btn-success" id="back">Back</button></a>
+      <!-- <a routerLink="/admin"><button class="btn btn-success" id="back">Back</button></a> -->
       <!-- <button class="btn btn-success" (click)="createRole(myForm.value)">Update</button> -->
     </form>
     </div>

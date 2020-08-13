@@ -7,6 +7,9 @@ import { AddRoleComponent } from './add-role/add-role.component';
 import { UpdateRoleComponent } from './update-role/update-role.component';
 import { AddDashboardComponent } from './add-dashboard/add-dashboard.component';
 import { UpdateDashboardComponent } from './update-dashboard/update-dashboard.component';
+import { RegisterComponent } from './register/register.component';
+import { TargetComponent } from './target/target.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 
@@ -18,7 +21,10 @@ const routes: Routes = [
   {path:'AddRole',component:AddRoleComponent},
   {path:'UpdateRole/:id',component:UpdateRoleComponent},
   {path:'AddDashboard',component:AddDashboardComponent},
-  {path:'UpdateDashboard/:id',component:UpdateDashboardComponent}
+  {path:'UpdateDashboard/:id',component:UpdateDashboardComponent},
+  {path:'register',component:RegisterComponent},
+  {path:'UpdateUser/:id',component:UpdateUserComponent},
+  {path:'target',component:TargetComponent}
 ];
 
 @NgModule({

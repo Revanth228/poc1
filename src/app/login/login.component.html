@@ -5,19 +5,21 @@
 <body>    
     <h2>Login Page</h2><br>    
     <div class="login">    
-    <form [formGroup]="loginform" id="login" method="get">    
+    <form >    
         <label><b>User Name     
         </b>    
         </label>    
-        <input formControlName="username" type="text" name="Uname" id="Uname" placeholder="Username">    
+        <input name="name" type="text" name="Uname" id="Uname" placeholder="Username" [(ngModel)]="name">    
         <br><br>    
         <label><b>Password     
         </b>    
         </label>    
-        <input formControlName="password" type="Password" name="Pass" id="Pass" placeholder="Password">    
+        <input name="password" type="Password" name="Pass" id="Pass" placeholder="Password" [(ngModel)]="password">    
         <br><br>    
-        <input type="button" name="log" id="log" value="Log In Here" (click)="onfun()">       
+        <!-- <input type="button" name="log" id="log" value="Log In Here" (click)="onfun()">     -->
+        <button style=" margin-left: 120px;" (click)="onfun()" class="btn btn-success">Login here</button>
         <br><br>    
+        <button style=" margin-left: 120px;" routerLink="/register" class="btn btn-warning">Register</button>
          
     </form>  
     <!-- {{loginform.value | json}}    -->

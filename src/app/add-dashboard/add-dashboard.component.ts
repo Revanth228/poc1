@@ -16,10 +16,12 @@ export class AddDashboardComponent implements OnInit{
     id:''
   }
   allUser: object;
+  allUser1:object;
   constructor(private commonService:CommonService,private router: Router ) { }
 
   ngOnInit(): void {
     this.getlatestuser1();
+    this.getlatestuser();
   }
   createRole(myform)
   {
@@ -35,6 +37,12 @@ export class AddDashboardComponent implements OnInit{
 {
   this.commonService.getAllUser1().subscribe((response)=>{
     this.allUser=response
+  });
+}
+getlatestuser()
+{
+  this.commonService.getAllUser().subscribe((response)=>{
+    this.allUser1=response
   });
 }
 

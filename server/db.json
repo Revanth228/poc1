@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "Rolename": "walmart4",
-      "listName": "hello",
-      "isAdmin": "no",
-      "id": 1
-    },
-    {
       "Rolename": "walmart2",
       "listName": "marble",
       "isAdmin": "no",
@@ -14,7 +8,7 @@
     },
     {
       "Rolename": "walmart3",
-      "listName": "hello2",
+      "listName": "hello24",
       "isAdmin": "no",
       "id": 3
     },
@@ -23,17 +17,23 @@
       "listName": "marble250",
       "isAdmin": "no",
       "id": 4
+    },
+    {
+      "Rolename": "walmart6",
+      "listName": "marble241",
+      "isAdmin": "no",
+      "id": 5
     }
   ],
   "users1": [
     {
-      "role": "Walmart",
-      "reportName": "Walmart rtp1",
+      "role": "walmart2",
+      "reportName": "Walmart-rtp01",
       "pwb": "Walmart Power BI Dashboard Links",
       "id": 1
     },
     {
-      "role": "Walmart",
+      "role": "walmart6",
       "reportName": "Walmart Rtp2",
       "pwb": "Walmart Power BI Dashboard Links\"",
       "id": 2
@@ -43,6 +43,38 @@
       "reportName": "Walmart Rtp3",
       "pwb": "power link banks walmart2",
       "id": 3
+    }
+  ],
+  "users2": [
+    {
+      "name": "SRG-USER1",
+      "password": "revanth1",
+      "role": "SRG",
+      "id": 1
+    },
+    {
+      "name": "SRG-USER2",
+      "password": "revanth2",
+      "role": "SRG",
+      "id": 2
+    },
+    {
+      "name": "Walmart-User1",
+      "password": "revanth1",
+      "role": "Walmart",
+      "id": 3
+    },
+    {
+      "name": "Walmart-USER2",
+      "password": "revanth2",
+      "role": "walmart5",
+      "id": 4
+    },
+    {
+      "name": "Walmart-USER3",
+      "password": "revanth3",
+      "role": "Target",
+      "id": 5
     }
   ]
 }

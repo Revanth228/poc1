@@ -14,9 +14,9 @@
         <li><button (click)="Onfunction(5)">Walmart Rpt 2</button></li>
         <li></li>
         <li>Target</li>
-        <li><button>Target Rpt 1</button></li> 
+        <li><button (click)="Onfunction(6)" >Target Rpt 1</button></li> 
          
-        <li><button>Target Rpt 2</button></li>
+        <li><button (click)="Onfunction(7)">Target Rpt 2</button></li>
         <li class="rev"><button (click)="logout()">LogOut</button></li>
     </ul>
 </div>
@@ -45,7 +45,7 @@
             <thead>
               <tr style="height: 25px; width: 5px">
                 
-                <th style="width: 180px;">Role name</th>
+                <th style="width: 120px;">Role name</th>
                 <th scope="col">List name</th>
                 <th scope="col">Is Admin</th>
                 <!-- <th scope="col">password</th> -->
@@ -96,13 +96,13 @@
           </tr>
     </table>
     </div> -->
-    <div class="json1" id="displaytable2">
+    <div class="json" id="displaytable2">
       <table class="table table-dark table-hover" style="width: 50%; margin-top: -550px; margin-left: 320px;">
           <thead>
             <tr style="height: 25px; width: 5px">
               
-              <th style="width: 180px;">Role</th>
-              <th scope="col">Report name</th>
+              <th scope="col" style="width:80px;">Role</th>
+              <th scope="col" style="width: 200px;" >Report name</th>
               <th scope="col">Power BI Links</th>
               <!-- <th scope="col">password</th> -->
               <th scope="col">edit</th>
@@ -132,12 +132,12 @@
             </button></td>
           </tr>  
           </tbody>
+          
         </table>
-        <button style="margin-left:600px;" class="btn btn-success" routerLink="/AddDashboard">Add Role</button>
-
+        <button style="margin-left:600px;" class="btn btn-success" routerLink="/AddDashboard">Add</button>
   </div>
   
-    <div class="div5" >
+    <!-- <div class="div5" >
         <table border="1px" id = "displaytable3" style="display:none">
             <tr>
                 <th *ngFor = "let column of headers2">
@@ -150,7 +150,33 @@
             </td>
           </tr>
     </table>
-    </div>
+    </div> -->
+    <div class="json" id="displaytable3">
+      <table class="table table-dark table-hover" style="width: 50%; margin-top: -550px; margin-left: 320px;">
+          <thead>
+            <tr style="height: 25px; width: 5px">
+              
+              <th style="width: 180px;">Username</th>
+              <th scope="col">password</th>
+              <th scope="col">Role</th>
+              <th scope="col">edit</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let user of allUser2">
+           <td>{{user.name}}</td>
+           <td>{{user.password}}</td>
+           <td>{{user.role}}</td>
+           <td><a routerLink="/UpdateUser/{{user.id}}" ><button   class="btn btn-warning">edit</button></a></td>
+          </tr>  
+          </tbody>
+        </table>
+        <!-- <button style="margin-left:600px;" class="btn btn-success" (click)="onadd()">Add Role</button> -->
+
+  </div>
+  
+
     <!-- <div class="operation">
       <button (click)="onadd()">Add</button>
 
@@ -165,6 +191,16 @@
           <img [src]=myimage2 alt="Forest1" width="800" height="400" >
       </div>
   </div>
+  <div class="div8">
+    <div id="displaytable6" style="display:none">
+    <img [src]=myimage3 alt="Forest" width="600" height="400">
+</div>
+</div>
+<div class="div9">
+  <div id="displaytable7" style="display:none">
+  <img [src]=myimage4 alt="Forest" width="600" height="400">
+</div>
+</div>
 
 
 

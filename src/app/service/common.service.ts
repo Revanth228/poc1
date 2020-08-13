@@ -6,6 +6,7 @@ import{HttpClient} from '@angular/common/http';
 export class CommonService {
 URL="http://localhost:3000/users";
 URL1="http://localhost:3000/users1";
+URL2="http://localhost:3000/users2"
   constructor(private _http: HttpClient) { }
   createUser(user){
     return this._http.post(this.URL,user);
@@ -38,5 +39,20 @@ URL1="http://localhost:3000/users1";
   getCurrentData1(id)
   {
     return  this._http.get(`${this.URL1}/${id}`)
+  }
+  createReg(data)
+  {
+  return this._http.post(this.URL2,data);
+   }
+   getAllUser2(){
+    return this._http.get(this.URL2);
+  }
+  updateUser2(id,data){
+    return  this._http.put(`${this.URL2}/${id}`,data)
+  }
+  
+  getCurrentData2(id)
+  {
+    return  this._http.get(`${this.URL2}/${id}`)
   }
 }

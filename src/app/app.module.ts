@@ -13,6 +13,9 @@ import { ConfirmationPopoverModule } from 'angular-confirmation-popover';
 import { UpdateRoleComponent } from './update-role/update-role.component';
 import { AddDashboardComponent } from './add-dashboard/add-dashboard.component';
 import { UpdateDashboardComponent } from './update-dashboard/update-dashboard.component';
+import { RegisterComponent } from './register/register.component';
+import { TargetComponent } from './target/target.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { UpdateDashboardComponent } from './update-dashboard/update-dashboard.co
     AddRoleComponent,
     UpdateRoleComponent,
     AddDashboardComponent,
-    UpdateDashboardComponent
+    UpdateDashboardComponent,
+    RegisterComponent,
+    TargetComponent,
+    UpdateUserComponent
     
   ],
   imports: [
