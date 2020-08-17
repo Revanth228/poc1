@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from '../service/common.service';
+import { ReadVarExpr } from '@angular/compiler';
 
 @Component({
   selector: 'app-admin',
@@ -177,8 +178,71 @@ edituser(user){
 }
 getlatestuser2()
 {
+  console.log("callingsajfsaf..");
   this.commonService.getAllUser2().subscribe((response)=>{
     this.allUser2=response
+  
   });
+
+}
+test(user)
+{
+  let dumy:any = user;
+  const role = user.RoleName;
+  console.log("user:: ", user);
+  console.log("dumy" ,dumy.Rolename)
+  //console.log("rolename:: ", user[0].Rolename);
+  this.getlatestuser2()
+  //var data = []
+ console.log("calling..");
+ this.commonService.getAllUser2().subscribe((response)=>{
+  this.allUser2=response
+  console.log("this.allUser2..", this.allUser2);
+  console.log("roleinside::", role);
+ console.log(this.allUser2[3].role);
+ let x:any=[];
+ let flag = false;
+ x=this.allUser2;
+ console.log(Object.keys(x).length);
+ for(let i=0; i<Object.keys(x).length; i++)
+ {
+  
+  if(dumy.Rolename == this.allUser2[i].role)
+  {
+
+  
+  
+  }
+  //  else if(dumy.Rolename == this.allUser2[i].role){
+  //   alert("cannot delete the role since the user is already exists!!");
+  //   break;
+  // }
+ 
+ }
+ for(let i=0; i<Object.keys(x).length; i++)
+ {
+   if(dumy.Rolename == this.allUser2[i].role)
+   {
+  // this.commonService.deleteUser(dumy).subscribe(()=>{
+  //     this.getlatestuser(); 
+       alert("cannot delete the role since the user is already exists!!")
+       flag= true;
+         //  }
+       //  ) 
+   }
+   
+ }
+ console.log("flag value" , flag)
+if(flag==false){
+  this.commonService.deleteUser(user).subscribe(()=>{
+    this.getlatestuser();
+    
+    }
+    )
+
+}
+ 
+});
+
 }
 }
