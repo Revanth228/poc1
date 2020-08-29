@@ -35,6 +35,7 @@ export class UpdateRoleComponent implements OnInit {
   }
   updateRole()
   {
+    
     this.commonService.updateUser(this.router.snapshot.params.id,this.userObj.value).subscribe((result)=>{
       console.log(result,"data updated succesfully");
     })

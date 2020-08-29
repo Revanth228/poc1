@@ -28,8 +28,9 @@ h1
 }
 .rev
 {
-    margin-top: -140px;
-    margin-left: 1250px;
+    position: absolute;
+    margin-top: -650px;
+    margin-left: 1285px;
 }
 .div3
 {

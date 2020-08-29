@@ -1,15 +1,20 @@
 <div class="div1"> <h1>SRG | Target</h1></div>
 <div class="div2"> 
     <ul>
-        <li><h3>Target</h3></li>
+        <!-- <li><h3>Target</h3></li>
          <li><button (click)="onfun(1)">Target Rpt 1</button></li> 
          
         <li><button (click)="onfun(2)">Target Rpt 2</button></li>
         
-        <li class="rev"><button (click)="logout()">LogOut</button></li>
+        <li class="rev"><button (click)="logout()">LogOut</button></li> -->
+        <h3>Target</h3>
+        <ul *ngFor="let u of allUser2 ">
+            <li *ngIf="u.role=='Target'">{{u.reportName}}</li>
+        </ul>
         <!-- <li><button>User</button></li> -->
     </ul>
 </div>
+<button class="rev" (click)="logout()">LogOut</button>
 <div class="div3">
     <div id="dp1" style="display:none">
     <img [src]=myimage1 alt="Forest" width="600" height="400">

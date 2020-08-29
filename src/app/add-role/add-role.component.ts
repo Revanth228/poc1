@@ -11,9 +11,10 @@ export class AddRoleComponent implements OnInit {
   userObj={
     roleName:'',
     listName:'',
-   isAdmin:'',
+   isAdmin:'no',
     // password:'',
-    id:''
+    id:'',
+    isActive:'yes'
   }
   allUser: object;
   constructor(private commonService:CommonService,private router: Router ) { }

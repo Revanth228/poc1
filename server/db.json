@@ -2,9 +2,10 @@
   "users": [
     {
       "Rolename": "SRG",
-      "listName": "marble",
+      "listName": "marble12",
       "isAdmin": "yes",
-      "id": 2
+      "id": 2,
+      "isActive": "yes"
     },
     {
       "Rolename": "walmart",
@@ -17,32 +18,44 @@
       "listName": "marble241",
       "isAdmin": "no",
       "id": 5
+    },
+    {
+      "Rolename": "Sams",
+      "listName": "abcd",
+      "isAdmin": "no",
+      "id": 6
     }
   ],
   "users1": [
     {
       "role": "walmart",
-      "reportName": "Walmart-rtp01",
-      "pwb": "Walmart Power BI Dashboard Links",
+      "reportName": "Walmart Rtp1",
+      "pwb": "https://corporate.walmart.com/newsroom/2020/04/23/walmart-releases-2020-annual-report-and-proxy-statement",
       "id": 1
     },
     {
       "role": "walmart",
       "reportName": "Walmart Rtp2",
-      "pwb": "Walmart Power BI Dashboard Links\"",
+      "pwb": "https://powerbi.microsoft.com/en-us/partner-showcase/data-maru-inc-amazon-seller-dashboard/",
       "id": 2
     },
     {
       "role": "Target",
       "reportName": "Target Rtp1",
-      "pwb": "power link banks target",
+      "pwb": "https://cargocollective.com/stimmung/TARGET-USER",
       "id": 4
     },
     {
-      "role": "Target",
-      "reportName": "Target Rtp2",
-      "pwb": "power link banks target",
-      "id": 5
+      "role": "SRG",
+      "reportName": "SRG-Rpt1",
+      "pwb": "https://stock.walmart.com/investors/financial-information/annual-reports-and-proxies/default.aspx",
+      "id": 6
+    },
+    {
+      "role": "Sams",
+      "reportName": "report1",
+      "pwb": "https://www.google.com/",
+      "id": 7
     }
   ],
   "users2": [

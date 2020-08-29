@@ -1,15 +1,21 @@
-<div class="div1"> <h1>SRG | Walmart</h1></div>
+<div class="div1" > 
+   <h1>{{allUser2}}</h1>
+</div>
 <div class="div2"> 
     <ul>
-        <li><h3>Walmart</h3></li>
-         <li><button (click)="onfun(1)">Walmart Rpt 1</button></li> 
+        <h3>{{allUser2}}</h3>
+        <ul *ngFor="let u of allUser1 ">
+            <li *ngIf="u.role==allUser2">{{u.reportName}}</li>
+        </ul>
+         <!-- <li><button (click)="onfun(1)">Walmart Rpt 1</button></li> 
          
         <li><button (click)="onfun(2)">Walmart Rpt 2</button></li>
         
-        <li class="rev"><button (click)="logout()">LogOut</button></li>
+        <li class="rev"><button (click)="logout()">LogOut</button></li> -->
         <!-- <li><button>User</button></li> -->
     </ul>
 </div>
+<button class="rev" (click)="logout()">LogOut</button>
 <div class="div3">
     <div id="dp1" style="display:none">
     <img [src]=myimage1 alt="Forest" width="600" height="400">

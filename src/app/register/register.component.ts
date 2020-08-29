@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
    
     )
     alert("User created successfully")
-    this.router1.navigateByUrl("/login")
+    this.router1.navigateByUrl("/admin")
   }
   getlatestuser()
   {

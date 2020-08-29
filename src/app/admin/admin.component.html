@@ -1,25 +1,52 @@
 <div class="div1"> <h1>SRG</h1></div>
 <div class="div2"> 
-    <ul>
-        
-         <li><button  (click)="Onfunction(1)" >Role</button></li> 
+  <!-- <button class="btn primary"><li class="fas fa-user"></li> profile</button> -->
+  <ul>
+    <li><button class="btn btn-dark"  (click)="Onfunction(1)" >Role</button></li> 
+         <li></li>
+        <li><button class="btn btn-dark"   (click)="Onfunction(2)" >Dashboard</button></li>
+        <li></li>
+        <li><button class="btn btn-dark"  (click)="Onfunction(3)" >User</button></li>
+        <li></li>
+  </ul>
+  
+    <ul >
+      
+      <!-- <li><button (click)="Onfunction(4)">Walmart Rpt 1</button></li> 
+       
+      <li><button (click)="Onfunction(5)">Walmart Rpt 2</button></li> -->
+  <ul *ngFor="let u of allUser">
+    <h6>{{u.Rolename}}</h6>
+  <ul *ngFor="let u1 of allUser1">
+    <li *ngIf="u1.role == u.Rolename" ><a [href]="u1.pwb">{{u1.reportName}}</a></li>
+  </ul>
+  </ul>
+          <!-- <li><button  (click)="Onfunction(1)" >Role</button></li> 
          <li></li>
         <li><button  (click)="Onfunction(2)" >Dashboard</button></li>
         <li></li>
         <li><button  (click)="Onfunction(3)" >User</button></li>
-        <li></li>
-        <li>Walmart</li>
-        <li><button (click)="Onfunction(4)">Walmart Rpt 1</button></li> 
+        <li></li> -->
+        <!-- <h6>Walmart</h6> -->
+        <!-- <li><button (click)="Onfunction(4)">Walmart Rpt 1</button></li> 
          
-        <li><button (click)="Onfunction(5)">Walmart Rpt 2</button></li>
+        <li><button (click)="Onfunction(5)">Walmart Rpt 2</button></li> -->
+    <!-- <ul *ngFor="let u of allUser1">
+      <li *ngIf="u.role == 'walmart'" >{{u.reportName}}</li>
+    </ul>
         <li></li>
-        <li>Target</li>
-        <li><button (click)="Onfunction(6)" >Target Rpt 1</button></li> 
+        <h6>Target</h6> -->
+        <!-- <li><button (click)="Onfunction(6)" >Target Rpt 1</button></li> 
          
-        <li><button (click)="Onfunction(7)">Target Rpt 2</button></li>
-        <li class="rev"><button (click)="logout()">LogOut</button></li>
+        <li><button (click)="Onfunction(7)">Target Rpt 2</button></li> -->
+        <!-- <ul *ngFor="let u of allUser1">
+          <li *ngIf="u.role == 'Target'" >{{u.reportName}}</li>
+        </ul>
+        <li ></li>  -->
+       <!-- <li><a routerLink="/user">{{i +1}}.{{user.Rolename}}</a></li> -->
     </ul>
 </div>
+<button class="rev" (click)="logout()">LogOut</button>
 
     <!-- <h1>hello</h1>  -->
     <!-- <div class="div3" >
@@ -40,7 +67,7 @@
     </table>
     
     </div> -->
-    <div class="json" id="displaytable1">
+    <div class="json" id="displaytable1" *ngIf="table1">
         <table class="table table-dark table-hover" style="width: 50%; margin-top: -550px; margin-left: 320px;">
             <thead>
               <tr style="height: 25px; width: 5px">
@@ -96,7 +123,7 @@
           </tr>
     </table>
     </div> -->
-    <div class="json" id="displaytable2">
+    <div class="json" id="displaytable2" *ngIf="table2">
       <table class="table table-dark table-hover" style="width: 50%; margin-top: -550px; margin-left: 320px;">
           <thead>
             <tr style="height: 25px; width: 5px">
@@ -151,7 +178,7 @@
           </tr>
     </table>
     </div> -->
-    <div class="json" id="displaytable3">
+    <div class="json" id="displaytable3" *ngIf="table3">
       <table class="table table-dark table-hover" style="width: 50%; margin-top: -550px; margin-left: 320px;">
           <thead>
             <tr style="height: 25px; width: 5px">
@@ -160,7 +187,7 @@
               <th scope="col">password</th>
               <th scope="col">Role</th>
               <th scope="col">edit</th>
-              
+              <th scope="col">delete</th>
             </tr>
           </thead>
           <tbody>
@@ -169,11 +196,25 @@
            <td>{{user.password}}</td>
            <td>{{user.role}}</td>
            <td><a routerLink="/UpdateUser/{{user.id}}" ><button   class="btn btn-warning">edit</button></a></td>
+           <td> <button
+            
+            class="btn btn-danger"
+            mwlConfirmationPopover
+            [popoverTitle]="popoverTitle"
+            [popoverMessage]="popoverMessage"
+            placement="left"
+            (confirm)="deleteUser2(user)"
+            (cancel)="cancelClicked = true"
+            
+          >
+            delete
+          </button></td>
           </tr>  
           </tbody>
+          
         </table>
         <!-- <button style="margin-left:600px;" class="btn btn-success" (click)="onadd()">Add Role</button> -->
-
+        <button style=" margin-left: 600px;" routerLink="/register" class="btn btn-success">Add</button>
   </div>
   
 

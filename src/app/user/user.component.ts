@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
-
+import { Router,ActivatedRoute } from '@angular/router'
+import { CommonService } from '../service/common.service';
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
@@ -10,9 +10,13 @@ export class UserComponent implements OnInit {
   myimage1:string="assets/images/1.png";
   myimage2:string="assets/images/3.jpg";
 
-  constructor(private router: Router) { }
-
+  constructor(private router: Router, private act_router:ActivatedRoute,private commonService:CommonService) { }
+  allUser: Object;
+  allUser1: Object;
+ allUser2;
   ngOnInit(): void {
+    this.getlatestuser1();
+    this.getlatestuser2();
   }
   logout()
   {
@@ -29,4 +33,23 @@ export class UserComponent implements OnInit {
     document.getElementById("dp"+nr).style.display = "block";
 
   }
+  getlatestuser1()
+{
+  console.log("callingsajfsaf..");
+  this.commonService.getAllUser1().subscribe((response)=>{
+    this.allUser1=response
+  
+  });
+
+}
+getlatestuser2()
+{
+  console.log("callingsajfsaf..");
+  this.allUser2=this.act_router.snapshot.paramMap.get('id');
+  // this.commonService.getAllUser2().subscribe((response)=>{
+  //   this.allUser2=response
+  
+  // });
+
+}
 }

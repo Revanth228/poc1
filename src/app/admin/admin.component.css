@@ -19,8 +19,9 @@ ul
 }
 .div2
 {
+    
     position:left;
-    background-color:rgb(106, 167, 172);
+    background-color:rgb(176, 167, 228);
     width:220px;
     height:620px;
     margin-left: 0px;
@@ -80,8 +81,9 @@ ul
 }
 .rev
 {
-    margin-top: -300px;
-    margin-left: 1220px;
+    position: absolute;
+    margin-top: -660px;
+    margin-left: 1285px;
 }
 .div6
 {

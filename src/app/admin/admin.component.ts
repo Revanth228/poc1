@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonService } from '../service/common.service';
 import { ReadVarExpr } from '@angular/compiler';
+import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin',
@@ -12,6 +13,7 @@ import { ReadVarExpr } from '@angular/compiler';
   `
 })
 export class AdminComponent implements OnInit {
+  url: SafeResourceUrl;
   myimage1:string="assets/images/1.png";
   myimage2:string="assets/images/3.jpg";
   myimage3:string="assets/images/4.jpg";
@@ -99,42 +101,38 @@ export class AdminComponent implements OnInit {
     },
 
   ]
+  table1=false;
+  table2=false;
+  table3=false;
   allUser: Object;
   allUser1: Object;
  allUser2:object;
-  constructor(private router: Router, private commonService:CommonService) { }
-
+  constructor(private router: Router, private commonService:CommonService,sanitizer: DomSanitizer) {this.url = sanitizer.bypassSecurityTrustResourceUrl('https://www.google.com/'); }
+  
   ngOnInit(): void {
-    this.getlatestuser();
+     this.getlatestuser();
     
     //  this.getlatestuser1();
   }
   
  Onfunction(nr)
  {
+  // this.getlatestuser()
   this.getlatestuser1();
   this.getlatestuser2();
-     // let flag1 =true;
-     // return true;
-     if(document.getElementsByClassName("div3")){
-
-      
-       console.log("inside div3 condition")
-     }
-     document.getElementById("displaytable1").style.display = "none";
-     document.getElementById("displaytable2").style.display = "none";
-     document.getElementById("displaytable3").style.display = "none";
-     document.getElementById("displaytable4").style.display = "none";
-     document.getElementById("displaytable5").style.display = "none";
-     document.getElementById("displaytable6").style.display = "none";
-     document.getElementById("displaytable7").style.display = "none";
-     document.getElementById("displaytable"+nr).style.display = "block";
-     
-  //    document.getElementById("myTable").addEventListener("click", function(button) {    
-  //     if (document.getElementById("displaytable").style.display === "none") 		     document.getElementById("displaytable").style.display = "block";
-  //     else document.getElementById("displaytable").style.display = "none";
-  //  });
- 
+  if(nr==1){
+    this.table1=true;
+    this.table2=false;
+    this.table3=false;
+  }else if(nr==2){
+    this.table1=false;
+    this.table2=true;
+    this.table3=false;
+  }else{
+    this.table1=false;
+    this.table2=false;
+    this.table3=true;
+  }
     
  }
  getlatestuser()
@@ -157,18 +155,28 @@ export class AdminComponent implements OnInit {
  {
    this.router.navigate(['/AddRole']);
  }
- deleteUser(user)
- {
-  this.commonService.deleteUser(user).subscribe(()=>{
-  this.getlatestuser();
+//  deleteUser(user)
+//  {
+//   this.commonService.deleteUser(user).subscribe(()=>{
+//   this.getlatestuser();
   
-  }
-  )
-}
+//   }
+//   )
+// }
+
+
 deleteUser1(user)
  {
   this.commonService.deleteUser1(user).subscribe(()=>{
   this.getlatestuser1();
+  
+  }
+  )
+}
+deleteUser2(user)
+ {
+  this.commonService.deleteUser2(user).subscribe(()=>{
+  this.getlatestuser2();
   
   }
   )

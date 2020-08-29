@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CommonService} from '../service/common.service';
-import { Router } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-add-dashboard',
   templateUrl: './add-dashboard.component.html',
@@ -8,26 +9,34 @@ import { Router } from '@angular/router';
 })
 export class AddDashboardComponent implements OnInit{
   isEdit=false;
-  userObj={
-    role:'',
-    reportName:'',
-   pwb:'',
+  // userObj={
+  //   role:'',
+  //   reportName:'',
+  //  pwb:'',
+  //   // password:'',
+  //   id:''
+  // }
+  createDash=new FormGroup({
+    role:new FormControl(''),
+    reportName:new FormControl(''),
+   pwb:new FormControl(''),
     // password:'',
-    id:''
-  }
+    id:new FormControl('')
+  })
   allUser: object;
   allUser1:object;
-  constructor(private commonService:CommonService,private router: Router ) { }
+  constructor(private commonService:CommonService,private router: Router,private routers: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getlatestuser1();
     this.getlatestuser();
   }
-  createRole(myform)
+  createRole()
   {
-    console.log(myform);
-    this.commonService.createUser1(myform).subscribe((response)=>{
+    console.log(this.createDash.value);
+    this.commonService.createUser1(this.createDash.value).subscribe((response)=>{
       this.getlatestuser1();
+      console.log(response)
       alert("Data added Succesfully!!!")
       this.router.navigate(['/admin']);
     })

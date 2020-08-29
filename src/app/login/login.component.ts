@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   // password:any;
   authenticationForm:FormGroup;
   userDetails;
+  dashBoard;
 
   constructor(private router: Router, private  commonService:CommonService,private formBuilder:FormBuilder) { }
 
@@ -62,24 +63,39 @@ this.commonService.getAllUser2().subscribe((response)=>{
  // console.log(response[0])
  this.userDetails=response;
  let flag=false;
+//  this.commonService.getAllUser1().subscribe((response)=>{
+// this.dashBoard=response;
+
+ 
  for(let user of this.userDetails){
    if(user.name==this.authenticationForm.value.name && user.password== this.authenticationForm.value.password)
    {
-    if(user.role=="SRG")
-    {
-      this.router.navigate(['/admin']);
-      flag=true;
-    }
-    else if(user.role=="walmart")
-    {
-      this.router.navigate(['/user']);
-      flag=true;
-    }
-    else if(user.role=="Target")
-    {
-      this.router.navigate(['/target']);
-      flag=true;
-    }
+console.log('hai');
+if(user.role=="SRG")
+ {
+   this.router.navigate(['/admin']);
+   flag=true;
+ }
+ else
+ {
+    this.router.navigate(['/user',user.role])
+    flag=true;
+ }
+    // if(user.role=="SRG")
+    // {
+    //   this.router.navigate(['/admin']);
+    //   flag=true;
+    // }
+    // else if(user.role=="walmart")
+    // {
+    //   this.router.navigate(['/user']);
+    //   flag=true;
+    // }
+    // else if(user.role=="Target")
+    // {
+    //   this.router.navigate(['/target']);
+    //   flag=true;
+    // }
    }
  }
  console.log("falg value",flag);
@@ -88,6 +104,6 @@ this.commonService.getAllUser2().subscribe((response)=>{
   alert("In-correct details");
  }
 })
-
+//})
 }
 }

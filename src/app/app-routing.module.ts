@@ -16,7 +16,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 const routes: Routes = [
   {path:'',component:LoginComponent},
   {path:'admin',component:AdminComponent},
-  {path:'user',component:UserComponent},
+  {path:'user/:id',component:UserComponent},
   {path:'login',component:LoginComponent},
   {path:'AddRole',component:AddRoleComponent},
   {path:'UpdateRole/:id',component:UpdateRoleComponent},

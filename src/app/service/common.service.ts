@@ -44,6 +44,9 @@ URL2="http://localhost:3000/users2"
   {
   return this._http.post(this.URL2,data);
    }
+   deleteUser2(user){
+    return  this._http.delete("http://localhost:3000/users2/"+user.id)
+  }
    getAllUser2(){
     return this._http.get(this.URL2);
   }
