@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 import { TargetComponent } from './target/target.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +31,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     RegisterComponent,
     TargetComponent,
     UpdateUserComponent
+    
     
   ],
   imports: [

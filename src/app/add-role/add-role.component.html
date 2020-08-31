@@ -14,16 +14,37 @@
     <div class="form-group">
       <label for="empId">IsAdmin:</label>
       <!-- <input  placeholder="IsAdmin" name="isAdmin" class="form-control"  id="employeeid" [(ngModel)]="userObj.isAdmin"> -->
-      <select  id="role" name="role"  formControlName="role"  class="form-control">
-        <option  placeholder="IsAdmin" name="isAdmin" class="form-control"   [(ngModel)]="userObj.isAdmin">{{userObj.isAdmin}}</option>
+      <select  id="isAdmin" name="isAdmin"  class="form-control" readonly>
+        <option  placeholder="IsAdmin" name="isAdmin"  [(ngModel)]="userObj.isAdmin">{{userObj.isAdmin}}</option>
       </select>
     </div>
-    <div class="form-group">
-      <label for="empId">IsActive:</label>
-      <!-- <input  placeholder="IsAdmin" name="isAdmin" class="form-control"  id="employeeid" [(ngModel)]="userObj.isAdmin"> -->
-      <input  placeholder="IsActive" name="IsActive" class="form-control"  [(ngModel)]="userObj.isActive">
+    <div class="form-group" hidden>
+      <label for="isActive" >IsActive:</label>
+    
+      <input  placeholder="IsActive" name="IsActive" class="form-control"  [(ngModel)]="userObj.isActive"readonly>
     </div>
-  
+    <div class="form-group" hidden>
+      <label for="user-name">Created By:</label>
+     
+      <input placeholder=" "  name="createdBy" class="form-control"  [(ngModel)]="userObj.createdBy"readonly>
+    </div>
+    <div class="form-group" hidden>
+      <label for="Today">Timestamp:</label>
+    
+      <input placeholder="Timestamp" name="Timestamp" class="form-control"  [(ngModel)]="userObj.Timestamp" readonly>
+    </div>
+    <div class="form-group" hidden>
+      <label for="Modifyby">ModifiedBy:</label>
+    
+      <input placeholder="" name="ModifiedBy" class="form-control"  [(ngModel)]="userObj.modifiedBy" readonly>
+    </div>
+    <div class="form-group" hidden>
+      <label for="Modifyon">ModifiedOn:</label>
+    
+      <input placeholder="" name="ModifiedOn" class="form-control"  [(ngModel)]="userObj.modifiedOn" readonly>
+    </div>
+   
+ 
     <button class="btn btn-success" (click)="createRole(myForm.value)"  >Add</button>
     <!-- <button class="btn btn-success" (click)="createRole(myForm.value)">Update</button> -->
   </form>

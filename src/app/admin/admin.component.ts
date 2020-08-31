@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router,ActivatedRoute } from '@angular/router';
 import { CommonService } from '../service/common.service';
 import { ReadVarExpr } from '@angular/compiler';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
@@ -13,7 +13,7 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
   `
 })
 export class AdminComponent implements OnInit {
-  url: SafeResourceUrl;
+  url;
   myimage1:string="assets/images/1.png";
   myimage2:string="assets/images/3.jpg";
   myimage3:string="assets/images/4.jpg";
@@ -104,14 +104,20 @@ export class AdminComponent implements OnInit {
   table1=false;
   table2=false;
   table3=false;
+  table4=false;
   allUser: Object;
   allUser1: Object;
  allUser2:object;
-  constructor(private router: Router, private commonService:CommonService,sanitizer: DomSanitizer) {this.url = sanitizer.bypassSecurityTrustResourceUrl('https://www.google.com/'); }
+  allUser3;
+  allUser4: any;
+  constructor(private router: Router, private commonService:CommonService,private sanitizer: DomSanitizer,private act_router:ActivatedRoute)
+   {
+     this.url = sanitizer.bypassSecurityTrustResourceUrl('https://stock.walmart.com/investors/financial-information/annual-reports-and-proxies/default.aspx'); 
+  }
   
   ngOnInit(): void {
      this.getlatestuser();
-    
+    this.getlatestuser2a();
     //  this.getlatestuser1();
   }
   
@@ -128,10 +134,17 @@ export class AdminComponent implements OnInit {
     this.table1=false;
     this.table2=true;
     this.table3=false;
-  }else{
+  }else if(nr==3){
     this.table1=false;
     this.table2=false;
     this.table3=true;
+  }
+  else
+  {
+    this.table1=false;
+    this. table2=false;
+    this. table3=false;
+    this. table4=true;
   }
     
  }
@@ -151,10 +164,10 @@ export class AdminComponent implements OnInit {
  {
    this.router.navigate(['/login']);
  }
- onadd()
- {
-   this.router.navigate(['/AddRole']);
- }
+//  onadd()
+//  {
+//    this.router.navigate(['/AddRole/{{alluser}}']);
+//  }
 //  deleteUser(user)
 //  {
 //   this.commonService.deleteUser(user).subscribe(()=>{
@@ -193,6 +206,17 @@ getlatestuser2()
   });
 
 }
+getlatestuser2a()
+{
+  console.log("callingsajfsaf..");
+  this.allUser3=this.act_router.snapshot.paramMap.get('id');
+  this.allUser4=this.act_router.snapshot.paramMap.get('user');
+  // this.commonService.getAllUser2().subscribe((response)=>{
+  //   this.allUser2=response
+  
+  // });
+
+}
 test(user)
 {
   let dumy:any = user;
@@ -212,21 +236,21 @@ test(user)
  let flag = false;
  x=this.allUser2;
  console.log(Object.keys(x).length);
- for(let i=0; i<Object.keys(x).length; i++)
- {
+//  for(let i=0; i<Object.keys(x).length; i++)
+//  {
   
-  if(dumy.Rolename == this.allUser2[i].role)
-  {
+//   // if(dumy.Rolename == this.allUser2[i].role)
+//   // {
 
   
   
-  }
-  //  else if(dumy.Rolename == this.allUser2[i].role){
-  //   alert("cannot delete the role since the user is already exists!!");
-  //   break;
-  // }
+//   // }
+//   //  else if(dumy.Rolename == this.allUser2[i].role){
+//   //   alert("cannot delete the role since the user is already exists!!");
+//   //   break;
+//   // }
  
- }
+//  }
  for(let i=0; i<Object.keys(x).length; i++)
  {
    if(dumy.Rolename == this.allUser2[i].role)
@@ -235,6 +259,7 @@ test(user)
   //     this.getlatestuser(); 
        alert("cannot delete the role since the user is already exists!!")
        flag= true;
+       break;
          //  }
        //  ) 
    }

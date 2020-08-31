@@ -1,9 +1,11 @@
-<div class="div1"> <h1>SRG</h1></div>
+<div class="div1"> <h1>{{ allUser3 }}</h1> 
+
+</div>
 <div class="div2"> 
   <!-- <button class="btn primary"><li class="fas fa-user"></li> profile</button> -->
   <ul>
     <li><button class="btn btn-dark"  (click)="Onfunction(1)" >Role</button></li> 
-         <li></li>
+       
         <li><button class="btn btn-dark"   (click)="Onfunction(2)" >Dashboard</button></li>
         <li></li>
         <li><button class="btn btn-dark"  (click)="Onfunction(3)" >User</button></li>
@@ -18,7 +20,7 @@
   <ul *ngFor="let u of allUser">
     <h6>{{u.Rolename}}</h6>
   <ul *ngFor="let u1 of allUser1">
-    <li *ngIf="u1.role == u.Rolename" ><a [href]="u1.pwb">{{u1.reportName}}</a></li>
+    <li *ngIf="u1.role == u.Rolename" ><a [href]="u1.pwb" target="frame">{{u1.reportName}}</a></li>
   </ul>
   </ul>
           <!-- <li><button  (click)="Onfunction(1)" >Role</button></li> 
@@ -67,6 +69,7 @@
     </table>
     
     </div> -->
+    
     <div class="json" id="displaytable1" *ngIf="table1">
         <table class="table table-dark table-hover" style="width: 50%; margin-top: -550px; margin-left: 320px;">
             <thead>
@@ -86,7 +89,7 @@
              <td>{{user.listName}}</td>
              <td>{{user.isAdmin}}</td>
             
-             <td><a routerLink="/UpdateRole/{{user.id}}" ><button   class="btn btn-warning">edit</button></a></td>
+             <td><a routerLink="/UpdateRole/{{user.id}}/{{allUser4}}" ><button   class="btn btn-warning">edit</button></a></td>
              <!-- <td><button (click)="deleteUser(user)" class="btn btn-danger">delete</button></td> -->
              <td > <button
              
@@ -104,8 +107,8 @@
             </tr>  
             </tbody>
           </table>
-          <button style="margin-left:600px;" class="btn btn-success" (click)="onadd()">Add Role</button>
-
+          <button style="margin-left:600px;" class="btn btn-success" routerLink="/AddRole/{{allUser4}}">Add Role</button>
+          
     </div>
     
 
@@ -216,7 +219,10 @@
         <!-- <button style="margin-left:600px;" class="btn btn-success" (click)="onadd()">Add Role</button> -->
         <button style=" margin-left: 600px;" routerLink="/register" class="btn btn-success">Add</button>
   </div>
-  
+  <div id="frame1"  >
+    <iframe name="frame" width="40%" height="60%"  title="W3Schools Free Online Web Tutorials">
+    </iframe>
+  </div>
 
     <!-- <div class="operation">
       <button (click)="onadd()">Add</button>

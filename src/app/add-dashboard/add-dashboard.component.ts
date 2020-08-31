@@ -22,6 +22,7 @@ export class AddDashboardComponent implements OnInit{
    pwb:new FormControl(''),
     // password:'',
     id:new FormControl('')
+    
   })
   allUser: object;
   allUser1:object;

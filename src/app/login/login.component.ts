@@ -73,7 +73,7 @@ this.commonService.getAllUser2().subscribe((response)=>{
 console.log('hai');
 if(user.role=="SRG")
  {
-   this.router.navigate(['/admin']);
+   this.router.navigate(['/admin',user.role,user.name]);
    flag=true;
  }
  else

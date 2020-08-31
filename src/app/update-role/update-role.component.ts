@@ -9,18 +9,29 @@ import {FormGroup, FormControl} from '@angular/forms';
   styleUrls: ['./update-role.component.css']
 })
 export class UpdateRoleComponent implements OnInit {
-  
-  userObj=new FormGroup({
-    Rolename:new FormControl(''),
-    listName:new FormControl(''),
-   isAdmin:new FormControl(''),
-    // password:'',
-    id:new FormControl('')
-  })
+  date=new Date().toLocaleString();
+  allUser4: any;
+ 
   allUser: object;
+  allUser3: any;
+  userObj:any;
+  
   constructor(private commonService:CommonService,private router: ActivatedRoute,private router1:Router ) { }
 
   ngOnInit(): void {
+
+    this.test();
+   this. userObj=new FormGroup({
+      Rolename:new FormControl(''),
+      listName:new FormControl(''),
+     isAdmin:new FormControl(''),
+      // password:'',
+      id:new FormControl(''),
+      createdBy:new FormControl(''),
+      Timestamp:new FormControl(''),
+      ModifiedBy: new FormControl(this.allUser4),
+      ModifiedOn:new FormControl(this.date)
+    })
     console.log(this.router.snapshot.params.id)
     this.commonService.getCurrentData(this.router.snapshot.params.id).subscribe((result)=>{
       console.log(result)
@@ -29,7 +40,11 @@ export class UpdateRoleComponent implements OnInit {
         listName:new FormControl(result['listName']),
        isAdmin:new FormControl(result['isAdmin']),
         // password:'',
-        id:new FormControl(result['id'])
+        id:new FormControl(result['id']),
+        createdBy:new FormControl(result['createdBy']),
+        Timestamp:new FormControl(result['Timestamp']),
+          ModifiedOn:new FormControl(this.allUser4),
+        ModifiedBy:new FormControl(this.date)
       })
     })
   }
@@ -41,7 +56,7 @@ export class UpdateRoleComponent implements OnInit {
     })
     alert("updated succesfully");
     this.userObj.reset({});
-    this.router1.navigateByUrl("/admin");
+    this.router1.navigateByUrl("/admin/SRG/SRG-USER1");
 
   }
 //   createRole(myform)
@@ -60,6 +75,11 @@ export class UpdateRoleComponent implements OnInit {
 //     this.allUser=response
 //   });
 // }
+test()
+{
+  this.allUser3=this.router.snapshot.paramMap.get('id');
+         this.allUser4=this.router.snapshot.paramMap.get('user');
+}
 
 }
 
