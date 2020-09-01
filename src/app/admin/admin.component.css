@@ -1,4 +1,10 @@
-.div1
+ body,html{
+     height: 100%;
+     width:100%;
+     background-color:black;
+     
+ }
+ .div1   /* Top-panel */
 {
     background-color: rgb(10, 163, 163);
     padding:10px;
@@ -6,6 +12,7 @@
     margin-top: -8px;
     margin-left: -8px;
     height: 50px;
+    width:110%;
 }
 h1
 {
@@ -17,7 +24,7 @@ ul
     list-style-type: none;
     
 }
-.div2
+.div2 /* side-panel */
 {
     
     position:left;
@@ -25,7 +32,7 @@ ul
     width:220px;
     height:620px;
     margin-left: 0px;
-    margin-top: 0px;
+    margin-top: -7px;
 }
 .div3
 {
@@ -66,18 +73,27 @@ ul
 }
 #displaytable1
 {
-    margin-left: 50px;
-    margin-top: -580px; 
+    margin-left: 220px;
+    margin-top: -620px; 
+    background-color: black;
+    height: 620px;
+    width: 100%;
 }
 #displaytable2
 {
-    margin-left: 80px;
-    margin-top: -580px; 
+    
+    margin-left: 225px;
+    margin-top: 20px; 
+    background-color: black;
+    height: 600px;
+    width: 400px;
 }
 #displaytable3
 {
-    margin-left: 80px;
-    margin-top: -550px; 
+    margin-left: 225px;
+    margin-top: 50px; 
+    background-color: black;
+    height: 620px;
 }
 .rev
 {
@@ -110,9 +126,22 @@ margin-left: 300px;
     margin-top: -230px;
     
 } */
-.frame1
+#frame1,#history
 {
     position: right;
-    margin-left: 2450px;
-    margin-top: -2580px; 
+    margin-left: 220px;
+    margin-top: 0px;
+    height: 620px;
+    
+}
+.username
+{
+    color:white;
+}
+.background
+{
+    background-color: black;
+}
+html{
+    background-color:black;
 }

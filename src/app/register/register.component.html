@@ -21,7 +21,31 @@
         <input type="password" placeholder="password" name="listName" class="form-control" id="designation" formControlName="password" >
       </div>
     
-     
+      <div class="form-group" hidden >
+        <label for="user-name" >Created By:</label>
+       
+        <input placeholder=" "  name="createdBy" class="form-control" formControlName="createdBy" readonly>
+      </div>
+      <div class="form-group" hidden >
+        <label for="Today">CreatedOn:</label>
+      
+        <input placeholder="Timestamp" name="Timestamp" class="form-control"  formControlName="Timestamp" readonly>
+      </div>
+      <div class="form-group" hidden >
+        <label for="Modifyby">ModifiedBy:</label>
+      
+        <input placeholder="" name="ModifiedBy" class="form-control" formControlName="ModifiedBy"  >
+      </div>
+      <div class="form-group" hidden >
+        <label for="Modifyon">ModifiedOn:</label>
+      
+        <input placeholder="" name="ModifiedOn" class="form-control"  formControlName="ModifiedOn"  >
+      </div>
+      <div class="form-group" hidden>
+        <label for="isActive" >IsActive:</label>
+      
+        <input  placeholder="IsActive" name="IsActive" class="form-control"  formControlName="isActive" readonly>
+      </div>
     
       <button type="submit"  class="btn btn-success" >submit</button>
       <!-- <a routerLink="/admin"><button class="btn btn-success" id="back">Back</button></a> -->

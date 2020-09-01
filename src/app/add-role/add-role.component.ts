@@ -15,13 +15,8 @@ export class AddRoleComponent implements OnInit {
 userObj:any;
   allUser: object;
   allUser2;
-  
+  userDetails;
    
-//  datetime = "Last Sync: " + this.date.getDay() + "/" + this.date.getMonth() 
-// + "/" + this.date.getFullYear() + " @ " 
-// + this.date.getHours() + ":" 
-// + this.getMinutes() + ":" + this.getSeconds();
-  
   constructor(private commonService:CommonService,private router: Router,private act_router:ActivatedRoute ) { }
   allUser4:string;
   ngOnInit(): void {
@@ -38,8 +33,8 @@ userObj:any;
       isActive:'yes',
       createdBy:this.allUser4,
       Timestamp:this.date,
-      modifiedBy:'',
-      modifiedOn:'',
+      modifiedBy:this.allUser4,
+      modifiedOn:this.date,
       
     }
   }
@@ -47,12 +42,33 @@ userObj:any;
   createRole(myform)
   {
     console.log(myform);
-    this.commonService.createUser(myform).subscribe((response)=>{
-      this.getlatestuser();
-      alert("Data added Succesfully!!!")
-      this.router.navigate(['/admin']);
-    })
+    this.getlatestuser();
+this.commonService.getAllUser().subscribe((response)=>{
+  
+  console.log(response);
+  this.userDetails=response;
+  let flag=false;
+  console.log("hello this",this.userDetails)
+  for(let user of this.userDetails)
+  {
+    console.log( "userdetails:",user)
+    if(user.Rolename==this.userObj.roleName)
+    {
+      alert("Role is already present!!!")
+      flag=true;
+    }
+  }
+  if(flag==false){
+  this.commonService.createUser(myform).subscribe((response)=>{
+    this.getlatestuser();
+    alert("Data added Succesfully!!!")
+    this.router.navigate(["/admin/SRG/"+this.allUser4]);
+  })
+}
 
+})
+
+  
   }
   getlatestuser()
 {

@@ -15,7 +15,10 @@ URL2="http://localhost:3000/users2"
     return this._http.get(this.URL);
   }
   updateUser(id,data){
-    return  this._http.put(`${this.URL}/${id}`,data)
+    return  this._http.put(`${this.URL}/${id}`,data);
+  }
+  updateIsactive(data){
+    return  this._http.put(`${this.URL}`,data);
   }
   deleteUser(user){
     return  this._http.delete("http://localhost:3000/users/"+user.id)

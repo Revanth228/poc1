@@ -10,19 +10,27 @@ import {FormGroup, FormControl} from '@angular/forms';
   styleUrls: ['./update-dashboard.component.css']
 })
 export class UpdateDashboardComponent implements OnInit{
-  
-  userObj=new FormGroup({
-    role:new FormControl(''),
-    reportName:new FormControl(''),
-   pwb:new FormControl(''),
-    // password:'',
-    id:new FormControl('')
-  })
+  allUser4;
+  date=new Date().toLocaleString();
+ //userObj;
+ userObj=new FormGroup({
+  role:new FormControl(''),
+  reportName:new FormControl(''),
+ pwb:new FormControl(''),
+  // password:'',
+  id:new FormControl(''),
+  createdBy:new FormControl(''),
+  Timestamp:new FormControl(''),
+  ModifiedBy: new FormControl(this.allUser4),
+  ModifiedOn:new FormControl(this.date)
+})
   allUser: object;
   constructor(private commonService:CommonService,private router: ActivatedRoute,private router1:Router ) { }
 
   ngOnInit(): void {
+    this.test();
     this.getlatestuser();
+   
     console.log(this.router.snapshot.params.id)
     this.commonService.getCurrentData1(this.router.snapshot.params.id).subscribe((result)=>{
       console.log(result)
@@ -30,8 +38,11 @@ export class UpdateDashboardComponent implements OnInit{
       role:new FormControl(result['role']),
       reportName:new FormControl(result['reportName']),
        pwb:new FormControl(result['pwb']),
-        // password:'',
-        id:new FormControl(result['id'])
+        id:new FormControl(result['id']),
+        createdBy:new FormControl(result['createdBy']),
+        Timestamp:new FormControl(result['Timestamp']),
+        ModifiedBy:new FormControl(this.allUser4),
+        ModifiedOn:new FormControl(this.date)
       })
     })
   }
@@ -42,30 +53,19 @@ export class UpdateDashboardComponent implements OnInit{
     })
     alert("updated succesfully");
     this.userObj.reset({});
-    this.router1.navigateByUrl("/admin");
+    this.router1.navigate(["/admin/SRG/"+this.allUser4]);
 
   }
-//   createRole(myform)
-//   {
-//     console.log(myform);
-//     this.commonService.createUser(myform).subscribe((response)=>{
-//       this.getlatestuser();
-//       alert("Data added Succesfully!!!")
-//       // this.router.navigate(['/admin']);
-//     })
 
-//   }
-//   getlatestuser()
-// {
-//   this.commonService.getAllUser().subscribe((response)=>{
-//     this.allUser=response
-//   });
-// }
 getlatestuser()
 {
   this.commonService.getAllUser().subscribe((response)=>{
     this.allUser=response
   });
+}
+test()
+{
+  this.allUser4=this.router.snapshot.paramMap.get('user');
 }
 
 }

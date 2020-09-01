@@ -43,8 +43,8 @@ export class UpdateRoleComponent implements OnInit {
         id:new FormControl(result['id']),
         createdBy:new FormControl(result['createdBy']),
         Timestamp:new FormControl(result['Timestamp']),
-          ModifiedOn:new FormControl(this.allUser4),
-        ModifiedBy:new FormControl(this.date)
+        ModifiedBy:new FormControl(this.allUser4),
+        ModifiedOn:new FormControl(this.date)
       })
     })
   }
@@ -55,8 +55,9 @@ export class UpdateRoleComponent implements OnInit {
       console.log(result,"data updated succesfully");
     })
     alert("updated succesfully");
+    this.router1.navigate(["/admin/SRG/"+this.allUser4]);
     this.userObj.reset({});
-    this.router1.navigateByUrl("/admin/SRG/SRG-USER1");
+    
 
   }
 //   createRole(myform)

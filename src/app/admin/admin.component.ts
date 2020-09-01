@@ -23,30 +23,7 @@ export class AdminComponent implements OnInit {
   confirmClicked = false;
   cancelClicked = false;
 
-  // headers = ["RoleName","ListName", "IsAdmin"];
-  // rows = [
-  //   {
-  //     "RoleName" : "SRG",
-  //     "ListName" : "-",
-  //     "IsAdmin" : "yes"
-  //   },
-  //   {
-  //     "RoleName" : "Walmarat Role Name",
-  //     "ListName" : "walmart",
-  //     "IsAdmin" : "No"
-  //   },
-  //   {
-  //     "RoleName" : "Walmarat Insurance",
-  //     "ListName" : "walmart-insurance",
-  //     "IsAdmin" : "No"
-  //   },
-  //   {
-  //     "RoleName" : "Target Role Name",
-  //     "ListName" : "Target",
-  //     "IsAdmin" : "No"
-  //   },
-
-  // ]
+ 
   headers1 = ["Role","ReportName", "Power BI Links"];
   rows1 = [
     {
@@ -101,10 +78,15 @@ export class AdminComponent implements OnInit {
     },
 
   ]
-  table1=false;
+  table1=true;
   table2=false;
   table3=false;
   table4=false;
+  table5=false;
+  history_table1=false;
+  history_table2=false;
+  history_table3=false;
+
   allUser: Object;
   allUser1: Object;
  allUser2:object;
@@ -120,6 +102,27 @@ export class AdminComponent implements OnInit {
     this.getlatestuser2a();
     //  this.getlatestuser1();
   }
+  Onfunction1 (nr)
+  {
+if(nr==1)
+{
+this.history_table1=true;
+this.history_table2=false;
+this.history_table3=false;
+}
+else if(nr==2)
+{
+this.history_table1=false;
+this.history_table2=true;
+this.history_table3=false;
+}
+else
+{
+  this.history_table1=false;
+  this.history_table2=false;
+  this.history_table3=true;
+}
+  }
   
  Onfunction(nr)
  {
@@ -130,22 +133,40 @@ export class AdminComponent implements OnInit {
     this.table1=true;
     this.table2=false;
     this.table3=false;
+    this. table4=false;
+    this.table5=false;
   }else if(nr==2){
+
     this.table1=false;
     this.table2=true;
     this.table3=false;
+    this. table4=false;
+    this.table5=false;
+
   }else if(nr==3){
     this.table1=false;
     this.table2=false;
     this.table3=true;
+    this. table4=false;
+    this.table5=false;
+  }
+  else if(nr==4)
+  {
+    this.table1=false;
+    this. table2=false;
+    this. table3=false;
+    this. table4=true;
+    this.table5=false;
   }
   else
   {
     this.table1=false;
     this. table2=false;
     this. table3=false;
-    this. table4=true;
+    this. table4=false;
+    this.table5=true;
   }
+ 
     
  }
  getlatestuser()
@@ -164,19 +185,6 @@ export class AdminComponent implements OnInit {
  {
    this.router.navigate(['/login']);
  }
-//  onadd()
-//  {
-//    this.router.navigate(['/AddRole/{{alluser}}']);
-//  }
-//  deleteUser(user)
-//  {
-//   this.commonService.deleteUser(user).subscribe(()=>{
-//   this.getlatestuser();
-  
-//   }
-//   )
-// }
-
 
 deleteUser1(user)
  {
@@ -266,11 +274,12 @@ test(user)
    
  }
  console.log("flag value" , flag)
-if(flag==false){
-  this.commonService.deleteUser(user).subscribe(()=>{
-    this.getlatestuser();
+if(flag==false)
+{
+   this.commonService.deleteUser(user).subscribe(()=>{
+   this.getlatestuser();
     
-    }
+     }
     )
 
 }

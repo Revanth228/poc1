@@ -17,7 +17,31 @@
       <label for="empId">Power BI Links:</label>
       <input  placeholder="" name="pwb" class="form-control" id="employeeid" formControlName="pwb">
     </div>
-  
+    <div class="form-group" >
+      <label for="user-name" hidden>Created By:</label>
+     
+      <input placeholder=" "  name="createdBy" class="form-control" formControlName="createdBy" readonly>
+    </div>
+    <div class="form-group" hidden >
+      <label for="Today">CreatedOn:</label>
+    
+      <input placeholder="Timestamp" name="Timestamp" class="form-control"  formControlName="Timestamp" readonly>
+    </div>
+    <div class="form-group" hidden >
+      <label for="Modifyby">ModifiedBy:</label>
+    
+      <input placeholder="" name="ModifiedBy" class="form-control" formControlName="ModifiedBy"  >
+    </div>
+    <div class="form-group" hidden >
+      <label for="Modifyon">ModifiedOn:</label>
+    
+      <input placeholder="" name="ModifiedOn" class="form-control"  formControlName="ModifiedOn"  >
+    </div>
+    <div class="form-group" hidden>
+      <label for="isActive" >IsActive:</label>
+    
+      <input  placeholder="IsActive" name="IsActive" class="form-control"  formControlName="isActive"readonly>
+    </div>
     <button class="btn btn-success"  >Add</button>
     <!-- <button class="btn btn-success" (click)="createRole(myForm.value)">Update</button> -->
   </form>

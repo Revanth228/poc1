@@ -20,10 +20,10 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'AddRole/:user',component:AddRoleComponent},
   {path:'UpdateRole/:id/:user',component:UpdateRoleComponent},
-  {path:'AddDashboard',component:AddDashboardComponent},
-  {path:'UpdateDashboard/:id',component:UpdateDashboardComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'UpdateUser/:id',component:UpdateUserComponent},
+  {path:'AddDashboard/:user',component:AddDashboardComponent},
+  {path:'UpdateDashboard/:id/:user',component:UpdateDashboardComponent},
+  {path:'register/:user',component:RegisterComponent},
+  {path:'UpdateUser/:id/:user',component:UpdateUserComponent},
   {path:'target',component:TargetComponent}
 ];
 

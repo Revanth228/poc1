@@ -24,6 +24,27 @@
           <option *ngFor="let user of allUser" [value]="user.Rolename">{{user.Rolename}}</option>
         </select>
       </div>
+      <div class="form-group" hidden >
+        <label for="user-name">CreatedBy:</label>
+       
+        <input placeholder=" "  name="createdBy" class="form-control" formControlName="createdBy"readonly>
+      </div>
+      <div class="form-group" hidden >
+        <label for="Today">CreatedOn:</label>
+      
+        <input placeholder="Timestamp" name="Timestamp" class="form-control"  formControlName="Timestamp" readonly>
+      </div>
+      <div class="form-group" hidden >
+        <label for="Modifyby">ModifiedBy:</label>
+      
+        <input placeholder="" name="ModifiedBy" class="form-control" formControlName="ModifiedBy"  >
+      </div>
+      <div class="form-group" hidden >
+        <label for="Modifyon">ModifiedOn:</label>
+      
+        <input placeholder="" name="ModifiedOn" class="form-control"  formControlName="ModifiedOn"  >
+      </div>
+    
     
       <button type="submit"  class="btn btn-success" >Update</button>
       <!-- <a routerLink="/admin"><button class="btn btn-success" id="back">Back</button></a> -->

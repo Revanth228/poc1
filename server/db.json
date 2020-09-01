@@ -5,35 +5,54 @@
       "listName": "marble12",
       "isAdmin": "yes",
       "id": 2,
-      "isActive": "yes"
+      "IsActive": "yes",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:05:58 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:16:58 PM"
     },
     {
       "Rolename": "walmart",
       "listName": "hello24",
       "isAdmin": "no",
-      "id": 4
+      "id": 4,
+      "IsActive": "yes",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:05:58 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:16:58 PM"
     },
     {
       "Rolename": "Target",
       "listName": "marble241",
       "isAdmin": "no",
-      "id": 5
+      "id": 5,
+      "IsActive": "yes",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:05:58 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:16:58 PM"
     },
     {
       "Rolename": "Sams",
-      "listName": "abcd",
+      "listName": "dsaced",
       "isAdmin": "no",
-      "id": 6
+      "id": 6,
+      "IsActive": "yes",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:05:58 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:16:58 PM"
     },
     {
-      "Rolename": "yoji",
-      "listName": "pandusss",
+      "Rolename": "xscas",
+      "listName": "ascsa123",
       "isAdmin": "no",
-      "id": 7,
+      "id": 8,
       "createdBy": "SRG-USER1",
-      "Timestamp": "8/31/2020, 9:56:18 AM",
-      "ModifiedOn": "SRG-USER2",
-      "ModifiedBy": "8/31/2020, 9:57:14 AM"
+      "Timestamp": "9/1/2020, 8:43:35 PM",
+      "ModifiedBy": "SRG-USER2",
+      "ModifiedOn": "9/1/2020, 8:55:06 PM"
     }
   ],
   "users1": [
@@ -41,31 +60,55 @@
       "role": "walmart",
       "reportName": "Walmart Rtp1",
       "pwb": "https://corporate.walmart.com/newsroom/2020/04/23/walmart-releases-2020-annual-report-and-proxy-statement",
-      "id": 1
+      "id": 1,
+      "isActive": "yes",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:05:58 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:16:58 PM"
     },
     {
       "role": "walmart",
       "reportName": "Walmart Rtp2",
       "pwb": "https://powerbi.microsoft.com/en-us/partner-showcase/data-maru-inc-amazon-seller-dashboard/",
-      "id": 2
+      "id": 2,
+      "isActive": "yes",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:05:58 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:16:58 PM"
     },
     {
       "role": "Target",
       "reportName": "Target Rtp1",
       "pwb": "https://cargocollective.com/stimmung/TARGET-USER",
-      "id": 4
+      "id": 4,
+      "isActive": "yes",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:05:58 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:16:58 PM"
     },
     {
       "role": "SRG",
       "reportName": "SRG-Rpt1",
       "pwb": "https://stock.walmart.com/investors/financial-information/annual-reports-and-proxies/default.aspx",
-      "id": 6
+      "id": 6,
+      "isActive": "yes",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:05:58 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:16:58 PM"
     },
     {
       "role": "Sams",
-      "reportName": "report12",
-      "pwb": "https://www.google.com/",
-      "id": 7
+      "reportName": "sams-rtps1",
+      "pwb": "https://www.thesamproject.ca/",
+      "id": 7,
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:07:25 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "9/1/2020, 8:42:59 PM"
     }
   ],
   "users2": [
@@ -73,31 +116,56 @@
       "name": "SRG-USER1",
       "password": "revanth1",
       "role": "SRG",
-      "id": 1
+      "isActive": "yes",
+      "id": 1,
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:11:48 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:15:31 PM"
     },
     {
       "name": "SRG-USER2",
       "password": "revanth2",
       "role": "SRG",
-      "id": 2
+      "isActive": "yes",
+      "id": 2,
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:11:48 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:15:31 PM"
     },
     {
       "name": "Walmart-User1",
       "password": "revanth1",
       "role": "walmart",
-      "id": 3
+      "isActive": "yes",
+      "id": 3,
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:11:48 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:15:31 PM"
     },
     {
       "name": "Walmart-USER3",
       "password": "revanth3",
       "role": "walmart",
-      "id": 5
+      "isActive": "yes",
+      "id": 5,
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:11:48 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:15:31 PM"
     },
     {
       "name": "Target-USER2",
       "password": "revanth2",
       "role": "Target",
-      "id": 6
+      "isActive": "yes",
+      "id": 6,
+      "createdBy": "SRG-USER1",
+      "Timestamp": "8/31/2020, 4:11:48 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "8/31/2020, 4:15:31 PM"
     }
   ]
 }
