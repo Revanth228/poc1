@@ -73,26 +73,26 @@ ul
 }
 #displaytable1
 {
-    margin-left: 220px;
-    margin-top: -620px; 
-    background-color: black;
+    margin-left: 20px;
+    margin-top: -600px; 
+    /* background-color: black; */
     height: 620px;
     width: 100%;
 }
 #displaytable2
 {
     
-    margin-left: 225px;
-    margin-top: 20px; 
-    background-color: black;
+    margin-left: 175px;
+    margin-top: 15px; 
+    /* background-color: black; */
     height: 600px;
     width: 500px;
 }
 #displaytable3
 {
-    margin-left: 225px;
-    margin-top: 50px; 
-    background-color: black;
+    margin-left: 25px;
+    margin-top: 20px; 
+    /* background-color: black; */
     height: 620px;
 }
 .rev
