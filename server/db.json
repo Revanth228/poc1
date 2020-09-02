@@ -5,7 +5,7 @@
       "listName": "marble12",
       "isAdmin": "yes",
       "id": 2,
-      "IsActive": "yes",
+      "isActive": "yes",
       "createdBy": "SRG-USER1",
       "Timestamp": "8/31/2020, 4:05:58 PM",
       "ModifiedBy": "SRG-USER1",
@@ -16,7 +16,7 @@
       "listName": "hello24",
       "isAdmin": "no",
       "id": 4,
-      "IsActive": "yes",
+      "isActive": "yes",
       "createdBy": "SRG-USER1",
       "Timestamp": "8/31/2020, 4:05:58 PM",
       "ModifiedBy": "SRG-USER1",
@@ -27,32 +27,11 @@
       "listName": "marble241",
       "isAdmin": "no",
       "id": 5,
-      "IsActive": "yes",
+      "isActive": "yes",
       "createdBy": "SRG-USER1",
       "Timestamp": "8/31/2020, 4:05:58 PM",
       "ModifiedBy": "SRG-USER1",
       "ModifiedOn": "8/31/2020, 4:16:58 PM"
-    },
-    {
-      "Rolename": "Sams",
-      "listName": "dsaced",
-      "isAdmin": "no",
-      "id": 6,
-      "IsActive": "yes",
-      "createdBy": "SRG-USER1",
-      "Timestamp": "8/31/2020, 4:05:58 PM",
-      "ModifiedBy": "SRG-USER1",
-      "ModifiedOn": "8/31/2020, 4:16:58 PM"
-    },
-    {
-      "Rolename": "xscas",
-      "listName": "ascsa123",
-      "isAdmin": "no",
-      "id": 8,
-      "createdBy": "SRG-USER1",
-      "Timestamp": "9/1/2020, 8:43:35 PM",
-      "ModifiedBy": "SRG-USER2",
-      "ModifiedOn": "9/1/2020, 8:55:06 PM"
     }
   ],
   "users1": [
@@ -105,10 +84,11 @@
       "reportName": "sams-rtps1",
       "pwb": "https://www.thesamproject.ca/",
       "id": 7,
+      "isActive": "no",
       "createdBy": "SRG-USER1",
       "Timestamp": "8/31/2020, 4:07:25 PM",
       "ModifiedBy": "SRG-USER1",
-      "ModifiedOn": "9/1/2020, 8:42:59 PM"
+      "ModifiedOn": "9/2/2020, 11:43:00 AM"
     }
   ],
   "users2": [

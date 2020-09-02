@@ -13,9 +13,17 @@
     
       <div class="form-group">
         <label for="empId">IsAdmin:</label>
-        <input  placeholder="IsAdmin" name="isAdmin" class="form-control" id="employeeid" formControlName="isAdmin" >
+        <input  placeholder="IsAdmin" name="isAdmin" class="form-control" id="employeeid" readonly formControlName="isAdmin" >
       </div>
       <div class="form-group" >
+        <label for="isActive" >IsActive:</label>
+        <select placeholder="IsActive"  id="isActive" name="isActive"  class="form-control" formControlName="isActive" >
+          <option  placeholder="IsActive" name="isActive"  selected>yes</option>
+          <option  placeholder="IsActive" name="isActive"  >no</option>
+        </select>
+        <!-- <input  placeholder="IsActive" name="IsActive" class="form-control"  formControlName="isActive"> -->
+      </div>
+      <div class="form-group" hidden >
         <label for="user-name" hidden>Created By:</label>
        
         <input placeholder=" "  name="createdBy" class="form-control" formControlName="createdBy"readonly>
