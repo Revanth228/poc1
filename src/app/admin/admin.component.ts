@@ -14,6 +14,7 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 })
 export class AdminComponent implements OnInit {
   url;
+  p:number=1;
   myimage1:string="assets/images/1.png";
   myimage2:string="assets/images/3.jpg";
   myimage3:string="assets/images/4.jpg";

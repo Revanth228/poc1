@@ -1,18 +1,18 @@
 <div class="col-md-6">
-  <h2 class="text-center">Add role</h2>
+  <h2 class="text-center" style="color: whitesmoke;">Add role</h2>
   <form #myForm="ngForm">
     <div class="form-group">
-      <label for="name">Role-Name:</label>
+      <label for="name"style="color: whitesmoke;">Role-Name:</label>
       <input type="text" placeholder="Role-Name" name="Rolename" class="form-control" id="name" [(ngModel)]="userObj.roleName">
     </div>
   
     <div class="form-group">
-      <label for="designation">List-Name:</label>
+      <label for="designation" style="color: whitesmoke;">List-Name:</label>
       <input  placeholder="List-Name" name="listName" class="form-control" id="designation" [(ngModel)]="userObj.listName">
     </div>
   
     <div class="form-group">
-      <label for="empId">IsAdmin:</label>
+      <label for="empId" style="color: whitesmoke;">IsAdmin:</label>
       <!-- <input  placeholder="IsAdmin" name="isAdmin" class="form-control"  id="employeeid" [(ngModel)]="userObj.isAdmin"> -->
       <select  id="isAdmin" name="isAdmin"  class="form-control" readonly>
         <option  placeholder="IsAdmin" name="isAdmin"  [(ngModel)]="userObj.isAdmin">{{userObj.isAdmin}}</option>
@@ -45,7 +45,7 @@
     </div>
    
  
-    <button class="btn btn-success" (click)="createRole(myForm.value)"  >Add</button>
+    <button class="btn btn-info" (click)="createRole(myForm.value)"  >Add</button>
     <!-- <button class="btn btn-success" (click)="createRole(myForm.value)">Update</button> -->
   </form>
   </div>

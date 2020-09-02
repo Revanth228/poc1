@@ -1,5 +1,5 @@
 <div class="col-md-6">
-    <h2 class="text-center">Update role</h2>
+    <h2 class="text-center"  style="color: whitesmoke;">Update dashboard</h2>
     <form  [formGroup]="userObj" (ngSubmit)="updateDash()">
       <div class="form-group">
         <!-- <label for="name">Role:</label>
@@ -10,16 +10,16 @@
       </div>
     
       <div class="form-group">
-        <label for="designation">Report-Name:</label>
+        <label for="designation"  style="color: whitesmoke;">Report-Name:</label>
         <input  placeholder="List-Name" name="listName" class="form-control" id="designation" formControlName="reportName" >
       </div>
     
       <div class="form-group">
-        <label for="empId">Power BI Links:</label>
+        <label for="empId"  style="color: whitesmoke;">Power BI Links:</label>
         <input  placeholder="IsAdmin" name="isAdmin" class="form-control" id="employeeid"  formControlName="pwb" >
       </div>
       <div class="form-group" >
-        <label for="isActive" >IsActive:</label>
+        <label for="isActive" style="color: whitesmoke;" >IsActive:</label>
         <select placeholder="IsActive"  id="isActive" name="isActive"  class="form-control" formControlName="isActive" >
           <option  placeholder="IsActive" name="isActive"  selected>yes</option>
           <option  placeholder="IsActive" name="isActive"  >no</option>
@@ -27,28 +27,28 @@
         <!-- <input  placeholder="IsActive" name="IsActive" class="form-control"  formControlName="isActive"> -->
       </div>
       <div class="form-group" hidden>
-        <label for="user-name">Created By:</label>
+        <label for="user-name"  style="color: whitesmoke;">Created By:</label>
        
         <input placeholder=" "  name="createdBy" class="form-control" formControlName="createdBy"readonly>
       </div>
       <div class="form-group" hidden >
-        <label for="Today">Timestamp:</label>
+        <label for="Today"  style="color: whitesmoke;">Timestamp:</label>
       
         <input placeholder="Timestamp" name="Timestamp" class="form-control"  formControlName="Timestamp" readonly>
       </div>
       <div class="form-group" hidden >
-        <label for="Modifyby">ModifiedBy:</label>
+        <label for="Modifyby"  style="color: whitesmoke;">ModifiedBy:</label>
       
         <input placeholder="" name="ModifiedBy" class="form-control" formControlName="ModifiedBy"  >
       </div>
       <div class="form-group" hidden >
-        <label for="Modifyon">ModifiedOn:</label>
+        <label for="Modifyon"  style="color: whitesmoke;">ModifiedOn:</label>
       
         <input placeholder="" name="ModifiedOn" class="form-control"  formControlName="ModifiedOn"  >
       </div>
     
     
-      <button type="submit"  class="btn btn-success" >Update</button>
+      <button type="submit"  class="btn btn-info" >Update</button>
       <!-- <a routerLink="/admin"><button class="btn btn-success" id="back">Back</button></a> -->
       <!-- <button class="btn btn-success" (click)="createRole(myForm.value)">Update</button> -->
     </form>

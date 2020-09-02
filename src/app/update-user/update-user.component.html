@@ -1,20 +1,20 @@
 <div class="col-md-6">
-    <h2 class="text-center">Update-User Form</h2>
+    <h2 class="text-center"  style="color: whitesmoke;">Update-User Form</h2>
     <form  [formGroup]="createUser" (ngSubmit)="updateUser()" >
       <div class="form-group">
-        <label for="name">Name</label>
+        <label for="name"  style="color: whitesmoke;">Name</label>
         <input type="text" placeholder="Role" name="Rolename" class="form-control" id="name" formControlName="name" >
       </div>
     
       <div class="form-group">
-        <label for="designation">Password</label>
+        <label for="designation"  style="color: whitesmoke;">Password</label>
         <input type="password" placeholder="List-Name" name="listName" class="form-control" id="designation" formControlName="password" >
       </div>
     
       <div class="form-group">
         <!-- <label for="empId">Role</label>
         <input type="text" placeholder="IsAdmin" name="isAdmin" class="form-control" id="employeeid"  formControlName="role" > -->
-        <label for="Role">
+        <label for="Role"  style="color: whitesmoke;">
           Role
         </label>
         <select  id="role" name="role"  formControlName="role"  class="form-control">
@@ -35,7 +35,7 @@
         <input placeholder="Timestamp" name="Timestamp" class="form-control"  formControlName="Timestamp" readonly>
       </div>
       <div class="form-group" >
-        <label for="isActive" >IsActive:</label>
+        <label for="isActive"  style="color: whitesmoke;" >IsActive:</label>
         <select placeholder="IsActive"  id="isActive" name="isActive"  class="form-control" formControlName="isActive" >
           <option  placeholder="IsActive" name="isActive"  selected>yes</option>
           <option  placeholder="IsActive" name="isActive"  >no</option>
@@ -54,7 +54,7 @@
       </div>
     
     
-      <button type="submit"  class="btn btn-success" >Update</button>
+      <button type="submit"  class="btn btn-info" >Update</button>
       <!-- <a routerLink="/admin"><button class="btn btn-success" id="back">Back</button></a> -->
       <!-- <button class="btn btn-success" (click)="createRole(myForm.value)">Update</button> -->
     </form>

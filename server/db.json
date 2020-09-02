@@ -32,6 +32,28 @@
       "Timestamp": "8/31/2020, 4:05:58 PM",
       "ModifiedBy": "SRG-USER1",
       "ModifiedOn": "8/31/2020, 4:16:58 PM"
+    },
+    {
+      "Rolename": "SRG1",
+      "listName": "hello243",
+      "isAdmin": "no",
+      "isActive": "yes",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "9/2/2020, 2:23:11 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "9/2/2020, 2:23:11 PM",
+      "id": 6
+    },
+    {
+      "Rolename": "dvvsdv",
+      "listName": "sdfewf",
+      "isAdmin": "no",
+      "isActive": "yes",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "9/2/2020, 3:02:14 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "9/2/2020, 3:02:14 PM",
+      "id": 7
     }
   ],
   "users1": [

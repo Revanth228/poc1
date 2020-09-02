@@ -16,8 +16,8 @@ import { UpdateDashboardComponent } from './update-dashboard/update-dashboard.co
 import { RegisterComponent } from './register/register.component';
 import { TargetComponent } from './target/target.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
-
-
+import {Ng2SearchPipeModule} from 'ng2-search-filter'
+import {NgxPaginationModule} from 'ngx-pagination'
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +44,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
       confirmButtonType: 'danger', // set defaults here
       popoverTitle:'success'
     }),
-  
+  Ng2SearchPipeModule,
+  NgxPaginationModule
     
   ],
   providers: [],

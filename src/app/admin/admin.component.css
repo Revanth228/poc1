@@ -1,7 +1,7 @@
  body,html{
      height: 100%;
      width:100%;
-     background-color:black;
+     /* background-color:black; */
      
  }
  .div1   /* Top-panel */
@@ -71,7 +71,7 @@ ul
 {
     background-color: brown;
 }
-#displaytable1
+#displaytable1  /* Roles-table's div */
 {
     margin-left: 20px;
     margin-top: -600px; 
@@ -79,7 +79,7 @@ ul
     height: 620px;
     width: 100%;
 }
-#displaytable2
+#displaytable2 /* dashboard-table's div */
 {
     
     margin-left: 175px;
@@ -88,14 +88,14 @@ ul
     height: 600px;
     width: 500px;
 }
-#displaytable3
+#displaytable3 /* users-table's div */
 {
     margin-left: 25px;
     margin-top: 20px; 
     /* background-color: black; */
     height: 620px;
 }
-.rev
+.rev /* logout */
 {
     position: absolute;
     margin-top: -660px;
@@ -138,10 +138,10 @@ margin-left: 300px;
 {
     color:white;
 }
-.background
+ .background
 {
-    background-color: black;
-}
-html{
+    background-color: rgb(56, 54, 54);;
+} 
+/* html{
     background-color:black;
-}
+} */
