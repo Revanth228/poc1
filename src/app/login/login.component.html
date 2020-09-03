@@ -1,23 +1,23 @@
 <head>    
-    <title>Login Form</title>    
+    <title style="color: whitesmoke;">Login Form</title>    
        
 </head>    
-<body>    
-    <h2>Login Page</h2><br>    
+<body style="background-color:rgb(56, 54, 54);">    
+    <h2 style="color: whitesmoke;">Login Page</h2><br>    
     <div class="login">    
     <form [formGroup]="authenticationForm" (ngSubmit)="onfun()" >    
-        <label><b>User Name     
+        <label style="color: whitesmoke;"><b>User Name     
         </b>    
         </label>    
         <input  type="text"  id="Uname" placeholder="Username"  formControlName="name">    
         <br><br>    
-        <label><b>Password     
+        <label style="color: whitesmoke;"><b>Password     
         </b>    
         </label>    
         <input  type="Password"  id="Pass" placeholder="Password" formControlName="password">    
         <br><br>    
         <!-- <input type="button" name="log" id="log" value="Log In Here" (click)="onfun()">     -->
-        <button type="submit" style=" margin-left: 120px;"  class="btn btn-success">Sign-in</button>
+        <button type="submit" style=" margin-left: 120px;"  class="btn btn-info">Sign-in</button>
         <br><br>    
         <!-- <button style=" margin-left: 120px;" routerLink="/register" class="btn btn-warning">Register</button> -->
          

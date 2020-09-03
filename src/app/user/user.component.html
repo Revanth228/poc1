@@ -1,18 +1,11 @@
-<div class="div1" > 
-   <h1>{{allUser2}}</h1>
-</div>
+<!-- <body>
+
 <div class="div2"> 
     <ul>
         <h3>{{allUser2}}</h3>
-        <ul *ngFor="let u of allUser1 ">
-            <li *ngIf="u.role==allUser2">{{u.reportName}}</li>
+        <ul >
+            <li *ngFor="let u of allUser1 " ><a *ngIf="u.role==allUser2"  [href]="u.pwb" target="frame" >{{u.reportName}}</a></li>
         </ul>
-         <!-- <li><button (click)="onfun(1)">Walmart Rpt 1</button></li> 
-         
-        <li><button (click)="onfun(2)">Walmart Rpt 2</button></li>
-        
-        <li class="rev"><button (click)="logout()">LogOut</button></li> -->
-        <!-- <li><button>User</button></li> -->
     </ul>
 </div>
 <button class="rev" (click)="logout()">LogOut</button>
@@ -26,3 +19,23 @@
         <img [src]=myimage2 alt="Forest1" width="800" height="400" >
     </div>
 </div>
+
+    <iframe class="screen" name="frame" width="1130px" height="620px"  scrolling="auto" title="W3Schools Free Online Web Tutorials">
+    </iframe>
+</body> -->
+<div class="div1" > 
+    <h1>{{allUser2}}</h1>
+ </div>
+<div class="div2"> 
+    <ul>
+        <h3>{{allUser2}}</h3>
+        <ul >
+            <li *ngFor="let u of allUser1 " ><a *ngIf="u.role==allUser2"  [href]="u.pwb" target="frame" >{{u.reportName}}</a></li>
+        </ul>
+    </ul>
+</div>
+<div class="screen">
+<iframe  name="frame" width="1139px" height="620px"  scrolling="auto" title="W3Schools Free Online Web Tutorials">
+</iframe>
+</div>
+<button class="btn btn-link" style="margin-top: -1320px; margin-left: 1220px;" routerLink="/login" ><i style="width:20px; color:black" class="fas fa-user-circle"></i>Log-out</button>

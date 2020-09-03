@@ -15,70 +15,13 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
 export class AdminComponent implements OnInit {
   url;
   p:number=1;
-  myimage1:string="assets/images/1.png";
-  myimage2:string="assets/images/3.jpg";
-  myimage3:string="assets/images/4.jpg";
-  myimage4:string="assets/images/5.jpg";
   popoverTitle = 'Delete';
   popoverMessage = 'Do you really want to delete this data';
   confirmClicked = false;
   cancelClicked = false;
 
  
-  headers1 = ["Role","ReportName", "Power BI Links"];
-  rows1 = [
-    {
-      "Role" : "Walmart",
-      "ReportName" : "Walmart Rtp1",
-      "Power BI Links" : "Walmart Power BI Dashboard Links"
-    },
-    {
-      "Role" : "Walmart",
-      "ReportName" : "Walmart Rtp2",
-      "Power BI Links" : "Walmart Power BI Dashboard Links"
-
-    },
-    {
-      "Role" : "Target",
-      "ReportName" : "Target Rtp1",
-      "Power BI Links" : "Target Power BI Dashboard Links"
-    },
-    {
-      "Role" : "Target",
-      "ReportName" : "Target Rtp2",
-      "Power BI Links" : "Target Power BI Dashboard Links"
-    },
-    {
-      "Role" : "Walmart insurance",
-      "ReportName" : "Walmart insurance Rtp1",
-      "Power BI Links" : "Walmart Power BI Dashboard Links"
-    },
-
-  ]
-  headers2 = ["Name","Password", "Role"];
-  rows2 = [
-    {
-      "Name" : "SRG User2",
-      "Password" : "Password",
-      "Role" : "SRG"
-    },
-    {
-      "Name" : "SRG User1",
-      "Password" : "Password",
-      "Role" : "SRG"
-    },
-    {
-      "Name" : "Walmart User1",
-      "Password" : "Password",
-      "Role" : "Walmart"
-    },
-    {
-      "Name" : "Walmart User2",
-      "Password" : "Password",
-      "Role" : "Walmart"
-    },
-
-  ]
+  
   table1=true;
   table2=false;
   table3=false;
@@ -125,9 +68,9 @@ else
 }
   }
   
- Onfunction(nr)
+ Onfunction(nr)  //function for displaying the tables while clicking on button
  {
-  // this.getlatestuser()
+ 
   this.getlatestuser1();
   this.getlatestuser2();
   if(nr==1){
@@ -170,13 +113,13 @@ else
  
     
  }
- getlatestuser()
+ getlatestuser()  //getting the roles table details from the json server
  {
    this.commonService.getAllUser().subscribe((response)=>{
      this.allUser=response
    });
  }
- getlatestuser1()
+ getlatestuser1() //getting the dashboard details from json server
  {
    this.commonService.getAllUser1().subscribe((response)=>{
      this.allUser1=response
@@ -187,7 +130,7 @@ else
    this.router.navigate(['/login']);
  }
 
-deleteUser1(user)
+deleteUser1(user) //deleting the selected row from the dashboard table
  {
   this.commonService.deleteUser1(user).subscribe(()=>{
   this.getlatestuser1();
@@ -195,7 +138,7 @@ deleteUser1(user)
   }
   )
 }
-deleteUser2(user)
+deleteUser2(user) //deleting the selected row from the Users table
  {
   this.commonService.deleteUser2(user).subscribe(()=>{
   this.getlatestuser2();
@@ -203,10 +146,10 @@ deleteUser2(user)
   }
   )
 }
-edituser(user){
+edituser(user){   //while clicking on edit it will redirect to update-role screen
   this.router.navigate(['/UpdateRole']);
 }
-getlatestuser2()
+getlatestuser2() //getting the data from the user table
 {
   console.log("callingsajfsaf..");
   this.commonService.getAllUser2().subscribe((response)=>{
@@ -215,18 +158,14 @@ getlatestuser2()
   });
 
 }
-getlatestuser2a()
+getlatestuser2a()  //this is used for getting the 'username' and 'id' from the user-table 
 {
   console.log("callingsajfsaf..");
   this.allUser3=this.act_router.snapshot.paramMap.get('id');
   this.allUser4=this.act_router.snapshot.paramMap.get('user');
-  // this.commonService.getAllUser2().subscribe((response)=>{
-  //   this.allUser2=response
   
-  // });
-
 }
-test(user)
+test(user) 
 {
   let dumy:any = user;
   const role = user.RoleName;
@@ -245,32 +184,15 @@ test(user)
  let flag = false;
  x=this.allUser2;
  console.log(Object.keys(x).length);
-//  for(let i=0; i<Object.keys(x).length; i++)
-//  {
-  
-//   // if(dumy.Rolename == this.allUser2[i].role)
-//   // {
 
-  
-  
-//   // }
-//   //  else if(dumy.Rolename == this.allUser2[i].role){
-//   //   alert("cannot delete the role since the user is already exists!!");
-//   //   break;
-//   // }
- 
-//  }
  for(let i=0; i<Object.keys(x).length; i++)
  {
    if(dumy.Rolename == this.allUser2[i].role)
    {
-  // this.commonService.deleteUser(dumy).subscribe(()=>{
-  //     this.getlatestuser(); 
+ 
        alert("cannot delete the role since the user is already exists!!")
        flag= true;
        break;
-         //  }
-       //  ) 
    }
    
  }

@@ -17,6 +17,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.getlatestuser1();
     this.getlatestuser2();
+    this.getlatestuser();
   }
   logout()
   {
@@ -32,6 +33,12 @@ export class UserComponent implements OnInit {
     document.getElementById("dp2").style.display = "none";
     document.getElementById("dp"+nr).style.display = "block";
 
+  }
+  getlatestuser()
+  {
+    this.commonService.getAllUser().subscribe((response)=>{
+      this.allUser=response
+    });
   }
   getlatestuser1()
 {
