@@ -2,24 +2,26 @@
 <body>
  
 <div class="background">
-<div class="div1"> <h1 class="username">{{ allUser3 }}</h1> 
+<div class="div1">
+   <h1 class="username">{{ allUser3 }}</h1>
+   <button id="logout" class="btn btn-link" style="position: sticky; margin-top: -70px; margin-left: 1220px;" routerLink="/login" ><i style="width:20px; color:black" class="fas fa-user-circle"></i>Log-out</button>
   <div class="div2"> 
-     <!-- <button class="btn btn-link"><li class="fas fa-user"></li> profile</button>  -->
-    <ul>
-      <li><button style="margin-top: 0px; width:150px" class="btn btn-dark btn-block"  (click)="Onfunction(1)" ><i class="fas fa-user-shield"></i> Roles</button></li >
-         
-          <li><button style="margin-top: 5px; width:150px"  class="btn btn-dark btn-block"   (click)="Onfunction(2)" ><i class="fas fa-columns"></i> Dashboard</button></li>
-        
-          <li><button style="margin-top: 5px; width:150px"  class="btn btn-dark btn-block"  (click)="Onfunction(3)" ><i class="fas fa-users"></i> User</button></li>
-          <li><button style="margin-top: 5px; width:150px"  class="btn btn-dark btn-block"  (click)="Onfunction(5)"><i class="fas fa-database"></i> History</button></li>
-    </ul>
     
+    <ul >
+      <li><button style="margin-top: 0px; width:100px" class="btn btn-link "  (click)="Onfunction(1)" ><i class="fas fa-user-shield"></i> Roles</button></li >
+         
+          <li><button style="margin-top: -20px; width:100px"  class="btn btn-link "   (click)="Onfunction(2)" ><i class="fas fa-columns"></i> Dashboard</button></li>
+        
+          <li><button style="margin-top: -20px; width:100px"  class="btn btn-link "  (click)="Onfunction(3)" ><i class="fas fa-users"></i> User</button></li>
+          <li><button style="margin-top: -20px; width:100px"  class="btn btn-link "  (click)="Onfunction(5)"><i class="fas fa-history"></i> History</button></li>
+    </ul>
+
       <ul >
-        <button class="btn btn-link" style="margin-top: -420px; margin-left: 1220px;" routerLink="/login" ><i style="width:20px; color:black" class="fas fa-user-circle"></i>Log-out</button>
-    <ul *ngFor="let u of allUser">
+        
+    <ul style="margin-left: -20px;" *ngFor="let u of allUser">
       <h6>{{u.Rolename}}</h6>
     <ul *ngFor="let u1 of allUser1">
-      <li *ngIf="u1.role == u.Rolename"  ><a [href]="u1.pwb" target="frame"  (click)="Onfunction(4)">{{u1.reportName}}</a></li>
+      <li *ngIf="u1.role == u.Rolename" style="margin-left: -50px;"  ><a [href]="u1.pwb" target="frame"  (click)="Onfunction(4)">{{u1.reportName}}</a></li>
     </ul>
     </ul>
           
@@ -30,7 +32,7 @@
   <div id="displaytable1" *ngIf="table1">
     <div  >
       <div class="row">
-        <input type="search" style="margin-left: 1200px; margin-top: -20px;" placeholder="search" [(ngModel)]="searchText1"/>
+        <input type="search" style="margin-left: 990px; margin-top: -30px;" placeholder="search" [(ngModel)]="searchText1"/>
       </div>
     <div class="row">
     <table class="table table-striped table-dark"  style="width: 50%; margin-left: -120px;  margin-left: 320px;">
@@ -40,7 +42,7 @@
             <th scope="col">List name</th>
             <th scope="col">Is Admin</th>
             <th scope="col">Action</th>
-            <!-- <th scope="col">delete</th> -->
+         
           </tr>
         </thead>
         <tbody>
@@ -50,20 +52,7 @@
          <td *ngIf="user.isActive == 'yes'">{{user.isAdmin}}</td>
         
          <td *ngIf="user.isActive == 'yes'"><a routerLink="/UpdateRole/{{user.id}}/{{allUser4}}" ><button   class="btn btn-secondary">Action</button></a></td>
-         <!-- <td><button (click)="deleteUser(user)" class="btn btn-danger">delete</button></td> -->
-         <!-- <td *ngIf="user.isActive == 'yes'" > <button
-         
-            class="btn btn-secondary"
-            mwlConfirmationPopover
-            [popoverTitle]="popoverTitle"
-            [popoverMessage]="popoverMessage"
-            placement="left"
-            (confirm)="test(user)"
-            (cancel)="cancelClicked = true"
-           
-          >
-            delete
-          </button></td> -->
+       
         </tr>  
         </tbody>
         
@@ -72,7 +61,7 @@
       <pagination-controls (pageChange)="p=$event"></pagination-controls>
     </div>
     </div>
-      <button style="margin-left:600px; margin-top: -50px;" class="btn btn-info" routerLink="/AddRole/{{allUser4}}">Add Role</button>
+      <button style="margin-left:700px; margin-top: -100px;" class="btn btn-secondary" routerLink="/AddRole/{{allUser4}}"><i class="fas fa-plus-circle"></i> </button>
     </div>
 </div>
 
@@ -83,7 +72,7 @@
   
     <div class="json" id="displaytable2" *ngIf="table2">
       <div class="row">
-        <input type="search" style="margin-left: 1000px; margin-top: -10px;" placeholder="search" [(ngModel)]="searchText2"/>
+        <input type="search" style="margin-left: 760px; margin-top: -10px;" placeholder="search" [(ngModel)]="searchText2"/>
       </div>
       <table class="table table-striped table-dark" style="width: 50%;  margin-left: 180px;">
           <thead>
@@ -92,9 +81,9 @@
               <th scope="col" style="width:80px;">Role</th>
               <th scope="col" style="width: 200px;" >Report name</th>
               <th scope="col">Power BI Links</th>
-              <!-- <th scope="col">password</th> -->
+            
               <th scope="col">Action</th>
-              <!-- <th scope="col">delete</th> -->
+             
             </tr>
           </thead>
           <tbody>
@@ -104,25 +93,12 @@
            <td *ngIf="user.isActive == 'yes'">{{user.pwb}}</td>
           
            <td *ngIf="user.isActive == 'yes'"><a routerLink="/UpdateDashboard/{{user.id}}/{{allUser4}}" ><button   class="btn btn-secondary">Action</button></a></td>
-           <!-- <td><button (click)="deleteUser(user)" class="btn btn-danger">delete</button></td> -->
-           <!-- <td> <button
-            
-              class="btn btn-secondary"
-              mwlConfirmationPopover
-              [popoverTitle]="popoverTitle"
-              [popoverMessage]="popoverMessage"
-              placement="left"
-              (confirm)="deleteUser1(user)"
-              (cancel)="cancelClicked = true"
-              
-            >
-              delete
-            </button></td> -->
+       
           </tr>  
           </tbody>
           
         </table>
-        <button style="margin-left:500px; margin-top: 10px;" class="btn btn-info" routerLink="/AddDashboard/{{allUser4}}">Add</button>
+        <button style="margin-left:500px; margin-top: 0px;" class="btn btn-secondary" routerLink="/AddDashboard/{{allUser4}}"><i class="fas fa-plus-circle"></i> </button>
         <div style=" margin-top: -40px; margin-left:100px">
           <pagination-controls  (pageChange)="p=$event"></pagination-controls>
         </div>
@@ -130,7 +106,7 @@
   
     <div class="json" id="displaytable3" *ngIf="table3">
       <div class="row">
-        <input type="search" style="margin-left: 1100px; margin-top: -20px;" placeholder="search" [(ngModel)]="searchText3"/>
+        <input type="search" style="margin-left: 810px; margin-top: -20px;" placeholder="search" [(ngModel)]="searchText3"/>
       </div>
       
     
@@ -142,7 +118,7 @@
               <th scope="col">password</th>
               <th scope="col">Role</th>
               <th scope="col">Action</th>
-              <!-- <th scope="col">delete</th> -->
+             
             </tr>
           </thead>
           <tbody>
@@ -151,7 +127,178 @@
            <td *ngIf="user.isActive == 'yes'">{{user.password}}</td>
            <td *ngIf="user.isActive == 'yes'">{{user.role}}</td>
            <td *ngIf="user.isActive == 'yes'"><a routerLink="/UpdateUser/{{user.id}}/{{allUser4}}" ><button   class="btn btn-secondary">Action</button></a></td>
-           <!-- <td> <button
+          
+          </tr>  
+          </tbody>
+          
+        </table>
+        <div style=" margin-top:0px; margin-left:180px ; ">
+          <pagination-controls  (pageChange)="p=$event"></pagination-controls>
+        </div>
+        <button style=" margin-left: 600px; margin-top: -80px;" routerLink="/register/{{allUser4}}" class="btn btn-secondary"><i class="fas fa-plus-circle"></i> </button>
+  </div>
+  <div class="embed-responsive embed-responsive-16by9" style="margin-left: 220px;" *ngIf="table4"   >
+    <iframe name="frame" width="1130px" height="1020px" scrolling="auto" title="W3Schools Free Online Web Tutorials">
+    </iframe>
+  </div>
+<div id="history" *ngIf="table5" class="container">
+<div class="row">
+ 
+
+<div class="col-xs-12">
+
+<ul class="nav nav-tabs nav-justified" role="tablist" >
+<li class="nav-item">
+  <a href="#step-1" id="step1-tab" class="nav-link active" aria-selected="true" data-toggle="tab" role="tab">Role</a>
+</li>
+<li class="nav-item">
+  <a href="#step-2" id="step2-tab" class="nav-link " aria-selected="false" data-toggle="tab" role="tab">Dashboard</a>
+</li>
+<li class="nav-item">
+  <a href="#step-3" id="step3-tab" class="nav-link " aria-selected="false" data-toggle="tab" role="tab">Users</a>
+</li>
+<div class="panel rounded" ></div>
+</ul>
+<div class="row">
+  <input type="search" style="margin-left: 800px; margin-top: 50px;" placeholder="search" [(ngModel)]="searchText"/>
+</div>
+<div class="tab-content">
+<div class="tab-pane fade show active" id="step-1" aria-labelledby="step1-tab" role="tabpanel">
+  <div class="json" id="displaytable14" >
+ 
+  
+    <table class="table table-striped table-dark" style="width: 50%; margin-top: 0px; margin-left: 80px;">
+        <thead>
+          <tr style="height: 25px; width: 5px">
+            <th scope="col">IsActive</th>
+            <th scope="col" >Role name</th>
+            <th scope="col">List name</th>
+            <th scope="col">Is Admin</th>
+            <th scope="col">CreatedBy</th>
+            <th scope="col">CreatedOn</th>
+            <th scope="col">ModifiedBy</th>
+            <th scope="col">ModifiedOn</th>
+            <th scope="col" style="margin-left: 150px;">Action</th>
+            <th scope="col">delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of allUser | filter:searchText | paginate: {itemsPerPage:3, currentPage:p}">
+         <td scope="col">{{user.isActive}}</td>
+         <td scope="col">{{user.Rolename}}</td>
+         <td scope="col">{{user.listName}}</td>
+         <td scope="col">{{user.isAdmin}}</td>
+         <td scope="col">{{user.createdBy}}</td>
+         <td scope="col">{{user.Timestamp}}</td>
+         <td scope="col">{{user.ModifiedBy}}</td>
+         <td scope="col">{{user.ModifiedOn}}</td>
+       
+         <td><a routerLink="/UpdateRole/{{user.id}}/{{allUser4}}" ><button class="btn btn-secondary" style="margin-left: -80px;">Action</button></a></td>
+        
+         <td > <button
+         
+            class="btn btn-secondary"
+            mwlConfirmationPopover
+            [popoverTitle]="popoverTitle"
+            [popoverMessage]="popoverMessage"
+            placement="left"
+            (confirm)="test(user)"
+            (cancel)="cancelClicked = true"
+           
+          >
+            delete
+          </button></td>
+        </tr>  
+        </tbody>
+      </table>
+      <div style=" margin-top: -10px; margin-left:470px">
+        <pagination-controls  (pageChange)="p=$event"></pagination-controls>
+      </div>
+     
+  </div>
+
+</div>
+<div class="tab-pane fade " id="step-2" aria-labelledby="step2-tab" role="tabpanel">
+  <div class="json" id="displaytable212" >
+    <table class="table table-striped table-dark" style="width: 50%; margin-top: 0px; margin-left: 80px;">
+        <thead>
+          <tr style="height: 25px; width: 5px">
+            <th scope="col">IsActive</th>
+            <th scope="col" style="width:80px;">Role</th>
+            <th scope="col" style="width: 200px;" >Report name</th>
+            <th scope="col">Power BI Links</th>
+            <th scope="col">CreatedBy</th>
+            <th scope="col">CreatedOn</th>
+            <th scope="col">ModifiedBy</th>
+            <th scope="col">ModifiedOn</th>
+            <th scope="col">Action</th>
+            <th scope="col">delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of allUser1 | filter:searchText | paginate: {itemsPerPage:3, currentPage:p}">
+          <td>{{user.isActive}}</td>
+         <td>{{user.role}}</td>
+         <td>{{user.reportName}}</td>
+         <td >{{user.pwb}}</td>
+         <td>{{user.createdBy}}</td>
+         <td>{{user.Timestamp}}</td>
+         <td>{{user.ModifiedBy}}</td>
+         <td>{{user.ModifiedOn}}</td>
+         <td><a routerLink="/UpdateDashboard/{{user.id}}/{{allUser4}}" ><button   class="btn btn-secondary"style="margin-left: -80px;">Action</button></a></td>
+        
+         <td> <button
+          
+            class="btn btn-secondary"
+            mwlConfirmationPopover
+            [popoverTitle]="popoverTitle"
+            [popoverMessage]="popoverMessage"
+            placement="left"
+            (confirm)="deleteUser1(user)"
+            (cancel)="cancelClicked = true"
+            
+          >
+            delete
+          </button></td>
+        </tr>  
+        </tbody>
+        
+      </table>
+      <div style=" margin-top: -10px; margin-left:470px">
+        <pagination-controls  (pageChange)="p=$event"></pagination-controls>
+      </div>
+      
+  </div>
+  </div>
+  <div class="tab-pane fade " id="step-3" aria-labelledby="step3-tab" role="tabpanel">
+    <div class="json" id="displaytable33">
+      <table class="table table-striped table-dark" style="width: 50%; margin-top: 10px; margin-left: 80px;">
+          <thead>
+            <tr style="height:25px; width:5px">
+              <th scope="col">IsActive</th>
+              <th style="width: 180px;">Username</th>
+              <th scope="col">password</th>
+              <th scope="col">Role</th>
+              <th scope="col">CreatedBy</th>
+              <th scope="col">CreatedOn</th>
+              <th scope="col">ModifiedBy</th>
+              <th scope="col">ModifiedOn</th>
+              <th scope="col">Action</th>
+              <th scope="col" style="margin-left: -80px;">delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of allUser2 | filter:searchText | paginate: {itemsPerPage:3, currentPage:p}">
+            <td>{{user.isActive}}</td>
+           <td>{{user.name}}</td>
+           <td>{{user.password}}</td>
+           <td>{{user.role}}</td>
+           <td>{{user.createdBy}}</td>
+           <td>{{user.Timestamp}}</td>
+           <td>{{user.ModifiedBy}}</td>
+           <td>{{user.ModifiedOn}}</td>
+           <td><a routerLink="/UpdateUser/{{user.id}}/{{allUser4}}" ><button  class="btn btn-secondary" style="margin-left: -80px;">Action</button></a></td>
+           <td> <button
             
             class="btn btn-secondary"
             mwlConfirmationPopover
@@ -163,31 +310,21 @@
             
           >
             delete
-          </button></td> -->
+          </button></td>
           </tr>  
           </tbody>
           
         </table>
-        <div style=" margin-top:0px; margin-left:180px ; ">
+        <div style=" margin-top: -10px; margin-left:470px">
           <pagination-controls  (pageChange)="p=$event"></pagination-controls>
         </div>
-        <button style=" margin-left: 600px; margin-top: -50px;" routerLink="/register/{{allUser4}}" class="btn btn-info">Add</button>
-  </div>
-  <div id="frame1" *ngIf="table4"  >
-    <iframe name="frame" width="1130px" height="1020px" scrolling="auto" title="W3Schools Free Online Web Tutorials">
-    </iframe>
-  </div>
-<div id="history" *ngIf="table5" class="container">
-<div class="row">
-  <div class="row">
-          <input type="search" style="margin-left: 800px; margin-top: 50px;" placeholder="search" [(ngModel)]="searchText"/>
-  </div>
+       
+    </div>
+    </div>
+</div>
 
-<div class="col-xs-6">
-<button style="margin-left: 450px;" class="btn btn-secondary" (click)="Onfunction1(1)">Role</button>
-<button style="margin-left: 20px;" class="btn btn-secondary" (click)="Onfunction1(2)">Dashboard</button>
-<button style="margin-left: 20px;" class="btn btn-secondary" (click)="Onfunction1(3)">Users</button>
 <div class="json" id="displaytable14" *ngIf="history_table1">
+ 
   
   <table class="table table-striped table-dark" style="width: 50%; margin-top: 50px; margin-left: 80px;">
       <thead>
@@ -216,7 +353,7 @@
        <td>{{user.ModifiedOn}}</td>
      
        <td><a routerLink="/UpdateRole/{{user.id}}/{{allUser4}}" ><button   class="btn btn-secondary">Action</button></a></td>
-       <!-- <td><button (click)="deleteUser(user)" class="btn btn-danger">delete</button></td> -->
+      
        <td > <button
        
           class="btn btn-secondary"
@@ -236,7 +373,6 @@
     <div style=" margin-top: -10px; margin-left:60px">
       <pagination-controls  (pageChange)="p=$event"></pagination-controls>
     </div>
-    <!-- <button style="margin-left:600px;" class="btn btn-info" routerLink="/AddRole/{{allUser4}}">Add Role</button> -->
 </div>
 <div class="json" id="displaytable212" style="widows: 1000px;" *ngIf="history_table2">
   <table class="table table-striped table-dark" style="width: 50%; margin-top: 10px; margin-left: 80px;">
@@ -265,7 +401,7 @@
        <td>{{user.ModifiedBy}}</td>
        <td>{{user.ModifiedOn}}</td>
        <td><a routerLink="/UpdateDashboard/{{user.id}}/{{allUser4}}" ><button   class="btn btn-secondary">Action</button></a></td>
-       <!-- <td><button (click)="deleteUser(user)" class="btn btn-danger">delete</button></td> -->
+    
        <td> <button
         
           class="btn btn-secondary"
@@ -286,7 +422,7 @@
     <div style=" margin-top: -10px; margin-left:60px">
       <pagination-controls  (pageChange)="p=$event"></pagination-controls>
     </div>
-    <!-- <button style="margin-left:600px;" class="btn btn-info" routerLink="/AddDashboard/{{allUser4}}">Add</button> -->
+ 
 </div>
 <div class="json" id="displaytable33" *ngIf="history_table3">
   <table class="table table-striped table-dark" style="width: 50%; margin-top: 10px; margin-left: 80px;">
@@ -335,8 +471,7 @@
     <div style=" margin-top: -10px; margin-left:60px">
       <pagination-controls  (pageChange)="p=$event"></pagination-controls>
     </div>
-    <!-- <button style="margin-left:600px;" class="btn btn-success" (click)="onadd()">Add Role</button> -->
-    <!-- <button style=" margin-left: 600px;" routerLink="/register/{{allUser4}}" class="btn btn-info">Add</button> -->
+    
 </div>
 
 </div>

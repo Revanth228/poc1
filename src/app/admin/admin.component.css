@@ -6,7 +6,7 @@
  }
  .div1   /* Top-panel */
 {
-    background-color: rgb(10, 163, 163);
+    background-color: rgb(6, 16, 100);
     padding:10px;
     width:101%;
     margin-top: -8px;
@@ -28,11 +28,11 @@ ul
 {
     
     position:left;
-    background-color:rgb(176, 167, 228);
+    background-color:rgb(155, 207, 219);
     width:220px;
     height:1020px;
     margin-left: 0px;
-    margin-top: -7px;
+    margin-top: -29px;
 }
 .div3
 {
@@ -74,7 +74,7 @@ ul
 #displaytable1  /* Roles-table's div */
 {
     margin-left: 20px;
-    margin-top: -1000px; 
+    margin-top: -970px; 
     /* background-color: black; */
     height: 620px;
     width: 100%;
@@ -83,7 +83,7 @@ ul
 {
     
     margin-left: 175px;
-    margin-top: 15px; 
+    margin-top: 25px; 
     /* background-color: black; */
     height: 600px;
     width: 500px;
@@ -91,7 +91,7 @@ ul
 #displaytable3 /* users-table's div */
 {
     margin-left: 25px;
-    margin-top: 20px; 
+    margin-top: 30px; 
     /* background-color: black; */
     height: 620px;
 }
@@ -131,17 +131,89 @@ margin-left: 300px;
     position: right;
     margin-left: 220px;
     margin-top: 0px;
-    height: 620px;
+    height: 1020px;
+    width: 1200px;
     
 }
 .username
 {
     color:white;
+    margin-left: 45px;
 }
  .background
 {
-    background-color: rgb(56, 54, 54);;
+    background-color: rgb(56, 54, 54);
+    margin:0px auto;
 } 
 /* html{
     background-color:black;
 } */
+.container ul{
+    position: relative;
+    margin-top: 20px;
+}
+.container a{
+    padding:8px 80px;
+    color:black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.container .nav-link{
+    position: relative;
+    z-index: 99999;
+}
+.panel{
+    content: "";
+    position: absolute;
+    width:100%;
+    height: 100%;
+    background-color:rgba(17, 16, 16, 0.788);
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 0;
+    box-shadow: 2px 5px 20px rgba(150, 137, 137, 0.479);
+}
+.nav {
+    background-color: #000 !important;
+}
+
+.nav>li>a {
+    background-color: #666 !important;
+    color:rgb(56, 41, 41);
+}
+.div2>ul>li>button{
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+}
+.div2>ul>li>button:hover {
+    background-color:rgb(155, 207, 219);
+  }
+  .div2>ul>li>button.active {
+    background-color: #ccc;
+  }
+  .div2>ul{
+      margin-left: -30px;
+  }
+  @media screen and (max-width:959px)
+  {
+.background{
+    width: 100%;
+}
+.div1
+{
+    width:100%;
+}
+
+#logout
+{
+width: 100%;
+}
+  }
