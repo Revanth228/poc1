@@ -1,5 +1,5 @@
 <div class="col-md-6">
-    <h2 class="text-center"  style="color: whitesmoke;">Registration Form</h2>
+    <h2 class="text-center"  style="color: whitesmoke;">Create-User-Form</h2>
     <form  [formGroup]="createUser" (ngSubmit)="create()" >
       <div class="form-group">
         <!-- <label for="empId">Role</label>
@@ -11,17 +11,45 @@
           <option value="" selected>please select the role</option>
           <option *ngFor="let user of allUser" [value]="user.Rolename" >{{user.Rolename}}</option>
         </select>
+        <span style="color:rgb(187, 57, 57);" *ngIf="submitted && createUser.controls.role.invalid">please select role !</span>
       </div>
       <div class="form-group">
         <label for="name"  style="color: whitesmoke;">Name</label>
         <input type="text" placeholder="Name" name="Rolename" class="form-control" id="name" formControlName="name" >
+        
+        <span style="color:rgb(187, 57, 57);" *ngIf="submitted && createUser.controls.name.invalid">please fill the name  !</span>
       </div>
     
       <div class="form-group">
         <label for="designation"  style="color: whitesmoke;">Password</label>
         <input type="password" placeholder="password" name="listName" class="form-control" id="designation" formControlName="password" >
+        
+        <span style="color:rgb(187, 57, 57);" *ngIf="submitted && createUser.controls.password.invalid">please provide password !</span>
       </div>
-    
+      <div class="form-group">
+        <label for="contry"  style="color: whitesmoke;">contry</label>
+        <input type="text" placeholder="contry" name="contry" class="form-control" id="contry" formControlName="contry" >
+        
+        <span style="color:rgb(187, 57, 57);" *ngIf="submitted && createUser.controls.contry.invalid">please fill the country name !</span>
+      </div>
+      <div class="form-group">
+        <label for="city"  style="color: whitesmoke;">city</label>
+        <input type="text" placeholder="city" name="city" class="form-control" id="city" formControlName="city">
+        
+        <span style="color:rgb(187, 57, 57);" *ngIf="submitted && createUser.controls.city.invalid">please fill the city name </span>
+      </div>
+      <div class="form-group">
+        <label for="latitude"  style="color: whitesmoke;">latitude</label>
+        <input type="text" placeholder="Enter the latitude-coordinates" name="latitude" class="form-control" id="latitude" formControlName="latitude">
+        
+        <span style="color:rgb(187, 57, 57);" *ngIf="submitted && createUser.controls.latitude.invalid">please provide latitude co-ordinate value !</span>
+      </div>
+      <div class="form-group">
+        <label for="logitude"  style="color: whitesmoke;">longitude</label>
+        <input type="text" placeholder="Enter the longitude-coordinates" name="longitude" class="form-control" id="logitude" formControlName="logitude">
+        
+        <span style="color:rgb(187, 57, 57);" *ngIf="submitted && createUser.controls.logitude.invalid">please provide longitude co-ordinate value !</span>
+      </div>
       <div class="form-group" hidden >
         <label for="user-name" >Created By:</label>
        

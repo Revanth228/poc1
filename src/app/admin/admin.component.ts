@@ -13,6 +13,8 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
   `
 })
 export class AdminComponent implements OnInit {
+  latitude =17.3850;
+  longitude = 78.4867;
   url;
   p:number=1;
   popoverTitle = 'Delete';
@@ -27,6 +29,7 @@ export class AdminComponent implements OnInit {
   table3=false;
   table4=false;
   table5=false;
+  table6=false;
   history_table1=false;
   history_table2=false;
   history_table3=false;
@@ -79,6 +82,7 @@ else
     this.table3=false;
     this. table4=false;
     this.table5=false;
+    this.table6=false;
   }else if(nr==2){
 
     this.table1=false;
@@ -86,6 +90,7 @@ else
     this.table3=false;
     this. table4=false;
     this.table5=false;
+    this.table6=false;
 
   }else if(nr==3){
     this.table1=false;
@@ -93,6 +98,7 @@ else
     this.table3=true;
     this. table4=false;
     this.table5=false;
+    this.table6=false;
   }
   else if(nr==4)
   {
@@ -101,16 +107,26 @@ else
     this. table3=false;
     this. table4=true;
     this.table5=false;
+    this.table6=false;
   }
-  else
+  else if(nr==5)
   {
     this.table1=false;
     this. table2=false;
     this. table3=false;
     this. table4=false;
     this.table5=true;
+    this.table6=false;
   }
- 
+ else
+ {
+  this.table1=false;
+  this. table2=false;
+  this. table3=false;
+  this. table4=false;
+  this.table5=false;
+  this.table6=true;
+ }
     
  }
  getlatestuser()  //getting the roles table details from the json server

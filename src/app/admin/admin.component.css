@@ -4,6 +4,7 @@
      /* background-color:black; */
      
  }
+
  .div1   /* Top-panel */
 {
     background-color: rgb(6, 16, 100);
@@ -32,7 +33,7 @@ ul
     width:220px;
     height:1020px;
     margin-left: 0px;
-    margin-top: -29px;
+    margin-top: 0px;
 }
 .div3
 {
@@ -83,17 +84,26 @@ ul
 {
     
     margin-left: 175px;
-    margin-top: 25px; 
+    margin-top: -970px; 
     /* background-color: black; */
     height: 600px;
-    width: 500px;
+    width: 90%;
 }
 #displaytable3 /* users-table's div */
 {
     margin-left: 25px;
-    margin-top: 30px; 
+    margin-top: -970px;
     /* background-color: black; */
     height: 620px;
+    width: 90%;
+}
+#displaymap  /* Roles-table's div */
+{
+    margin-left: 220px;
+    margin-top: -1075px; 
+    /* background-color: black; */
+    height: 620px;
+    width: 100%;
 }
 .rev /* logout */
 {
@@ -126,14 +136,18 @@ margin-left: 300px;
     margin-top: -230px;
     
 } */
-#frame1,#history
+#history
 {
     position: right;
     margin-left: 220px;
-    margin-top: 0px;
+    margin-top: -970px;
     height: 1020px;
-    width: 1200px;
+    width: 100%;
     
+}
+#frame1
+{
+    margin-top: -600px;
 }
 .username
 {
@@ -193,6 +207,11 @@ margin-left: 300px;
     transition: 0.3s;
     font-size: 17px;
 }
+agm-map {
+    height: 164%;
+    width: 85%;
+  
+  }
 .div2>ul>li>button:hover {
     background-color:rgb(155, 207, 219);
   }
@@ -216,4 +235,5 @@ margin-left: 300px;
 {
 width: 100%;
 }
+
   }

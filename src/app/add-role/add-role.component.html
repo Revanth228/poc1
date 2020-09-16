@@ -3,7 +3,8 @@
   <form #myForm="ngForm">
     <div class="form-group">
       <label for="name"style="color: whitesmoke;">Role-Name:</label>
-      <input type="text" placeholder="Role-Name" name="Rolename" class="form-control" id="name" [(ngModel)]="userObj.roleName">
+      <input required type="text" placeholder="Role-Name" name="Rolename" class="form-control" id="name" [(ngModel)]="userObj.roleName">
+      
     </div>
   
     <div class="form-group">

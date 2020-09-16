@@ -16,8 +16,9 @@ import { UpdateDashboardComponent } from './update-dashboard/update-dashboard.co
 import { RegisterComponent } from './register/register.component';
 import { TargetComponent } from './target/target.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
-import {Ng2SearchPipeModule} from 'ng2-search-filter'
-import {NgxPaginationModule} from 'ngx-pagination'
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { AgmCoreModule } from '@agm/core';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +46,10 @@ import {NgxPaginationModule} from 'ngx-pagination'
       popoverTitle:'success'
     }),
   Ng2SearchPipeModule,
-  NgxPaginationModule
+  NgxPaginationModule,
+  AgmCoreModule.forRoot({
+    apiKey: 'AIzaSyCWUD2mW2uQN2ft8W43WlaDnJQu39dAWUk'
+  })
     
   ],
   providers: [],

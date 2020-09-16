@@ -7,16 +7,19 @@
         <option value=""  selected >please select the Role</option>
         <option  *ngFor="let user of allUser1" name="role" class="form-control" [value]="user.Rolename" >{{user.Rolename}}</option>
       </select>
+      <span style="color:rgb(187, 57, 57);" *ngIf="submitted && createDash.controls.role.invalid">please select role !</span>
     </div>
   
     <div class="form-group">
       <label for="designation" style="color: whitesmoke;">Report-Name:</label>
       <input  placeholder="Report-Name" name="reportName" class="form-control" id="designation" formControlName="reportName">
+      <span style="color:rgb(187, 57, 57);"  *ngIf="submitted && createDash.controls.reportName.invalid">please fill the ReportName!</span>
     </div>
   
     <div class="form-group">
       <label for="empId" style="color: whitesmoke;">Power BI Links:</label>
       <input  placeholder="link" name="pwb" class="form-control" id="employeeid" formControlName="pwb">
+      <span style="color:rgb(187, 57, 57);"  *ngIf="submitted && createDash.controls.pwb.invalid">please provide required link !</span>
     </div>
     <div class="form-group" hidden>
       <label for="user-name" >Created By:</label>

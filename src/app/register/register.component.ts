@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl,Validators } from '@angular/forms';
 import { CommonService } from '../service/common.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   date=new Date().toLocaleString();
   allUser4: any;
+  submitted:boolean=false;
  createUser;
   allUser: object;
   userList:any;
@@ -22,11 +23,15 @@ export class RegisterComponent implements OnInit {
     this.test();
     this.getlatestuser();
     this.createUser=new FormGroup({
-      name:new FormControl(''),
-      password:new FormControl(''),
-     role:new FormControl(''),
+      name:new FormControl('',Validators.required),
+      password:new FormControl('',Validators.required),
+     role:new FormControl('',Validators.required),
      isActive:new FormControl('yes'),
       id:new FormControl(''),
+    contry:new FormControl('',Validators.required),
+    city:new FormControl('',Validators.required),
+    latitude:new FormControl('',Validators.required),
+    logitude:new FormControl('',Validators.required),
       createdBy:new FormControl(this.allUser4),
       Timestamp:new FormControl(this.date),
       ModifiedBy: new FormControl(this.allUser4),
@@ -35,8 +40,14 @@ export class RegisterComponent implements OnInit {
   }
   create()
   {
+    this.submitted=true;
     console.log(this.createUser.value)
     this.getUserList();
+    if(this.createUser.invalid)
+    {
+      alert("please fill the mandatory details!!");
+      return;
+    }
     this.commonService.getAllUser2().subscribe((response)=>
     {
       this.userDetails=response;

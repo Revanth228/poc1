@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {CommonService} from '../service/common.service';
-import { FormGroup, FormControl ,FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl ,FormBuilder,Validators} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-add-dashboard',
@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class AddDashboardComponent implements OnInit{
   date=new Date().toLocaleString();
   allUser4: any;
- 
+ submitted:boolean=false;
   isEdit=false;
  createDash;
  userDetails;
@@ -23,9 +23,9 @@ export class AddDashboardComponent implements OnInit{
     this.getlatestuser1();
     this.getlatestuser();
     this.createDash=new FormGroup({
-      role:new FormControl(''),
-      reportName:new FormControl(''),
-     pwb:new FormControl(''),
+      role:new FormControl('', Validators.required),
+      reportName:new FormControl('',Validators.required),
+     pwb:new FormControl('',Validators.required),
       // password:'',
       id:new FormControl(''),
       isActive:new FormControl('yes'),
@@ -38,8 +38,15 @@ export class AddDashboardComponent implements OnInit{
   }
   createRole()
   {
+
+    this.submitted=true;
     console.log(this.createDash.value);
     this.getlatestuser1();
+    if(this.createDash.invalid)
+    {
+      alert("please fill the mandatory details");
+      return;
+    }
     this.commonService.getAllUser1().subscribe((response)=>{
 this.userDetails=response;
 let flag=false;

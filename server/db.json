@@ -15,12 +15,12 @@
       "Rolename": "walmart",
       "listName": "hello24",
       "isAdmin": "no",
-      "id": 4,
       "isActive": "yes",
+      "id": 4,
       "createdBy": "SRG-USER1",
       "Timestamp": "8/31/2020, 4:05:58 PM",
       "ModifiedBy": "SRG-USER1",
-      "ModifiedOn": "8/31/2020, 4:16:58 PM"
+      "ModifiedOn": "9/14/2020, 1:59:13 PM"
     },
     {
       "Rolename": "Target",
@@ -42,7 +42,7 @@
       "createdBy": "SRG-USER1",
       "Timestamp": "9/2/2020, 2:23:11 PM",
       "ModifiedBy": "SRG-USER1",
-      "ModifiedOn": "9/3/2020, 10:09:12 AM"
+      "ModifiedOn": "9/14/2020, 1:59:30 PM"
     },
     {
       "Rolename": "walmart4",
@@ -53,7 +53,7 @@
       "createdBy": "SRG-USER1",
       "Timestamp": "9/2/2020, 3:02:14 PM",
       "ModifiedBy": "SRG-USER1",
-      "ModifiedOn": "9/14/2020, 12:02:28 PM"
+      "ModifiedOn": "9/14/2020, 1:47:30 PM"
     }
   ],
   "users1": [
@@ -153,6 +153,10 @@
       "role": "SRG",
       "isActive": "yes",
       "id": 1,
+      "contry": "India",
+      "city": "Hyderabad",
+      "latitude": 17.385,
+      "longitude": 78.4867,
       "createdBy": "SRG-USER1",
       "Timestamp": "8/31/2020, 4:11:48 PM",
       "ModifiedBy": "SRG-USER1",
@@ -164,6 +168,10 @@
       "role": "SRG",
       "isActive": "yes",
       "id": 2,
+      "contry": "USA",
+      "city": "NewYork",
+      "latitude": 40.7128,
+      "longitude": 74.006,
       "createdBy": "SRG-USER1",
       "Timestamp": "8/31/2020, 4:11:48 PM",
       "ModifiedBy": "SRG-USER1",
@@ -175,6 +183,10 @@
       "role": "walmart",
       "isActive": "yes",
       "id": 3,
+      "contry": "India",
+      "city": "Kolkata",
+      "latitude": 22.5726,
+      "longitude": 88.3639,
       "createdBy": "SRG-USER1",
       "Timestamp": "8/31/2020, 4:11:48 PM",
       "ModifiedBy": "SRG-USER1",
@@ -186,6 +198,10 @@
       "role": "walmart",
       "isActive": "yes",
       "id": 5,
+      "contry": "USA",
+      "city": "Chicago",
+      "latitude": 41.8781,
+      "longitude": 87.6298,
       "createdBy": "SRG-USER1",
       "Timestamp": "8/31/2020, 4:11:48 PM",
       "ModifiedBy": "SRG-USER1",
@@ -197,10 +213,29 @@
       "role": "Target",
       "isActive": "yes",
       "id": 6,
+      "contry": "India",
+      "city": "Banglore",
+      "latitude": 12.9716,
+      "longitude": 77.5946,
       "createdBy": "SRG-USER1",
       "Timestamp": "8/31/2020, 4:11:48 PM",
       "ModifiedBy": "SRG-USER1",
       "ModifiedOn": "8/31/2020, 4:15:31 PM"
+    },
+    {
+      "name": "targetuser1",
+      "password": "yoji",
+      "role": "Target",
+      "id": 7,
+      "city": "pune",
+      "contry": "India",
+      "latitude": 18.5204,
+      "longitude": 73.8567,
+      "isActive": "yes",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "9/14/2020, 1:06:46 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "9/14/2020, 1:07:38 PM"
     }
   ]
 }
