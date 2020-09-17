@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
     contry:new FormControl('',Validators.required),
     city:new FormControl('',Validators.required),
     latitude:new FormControl('',Validators.required),
-    logitude:new FormControl('',Validators.required),
+    longitude:new FormControl('',Validators.required),
       createdBy:new FormControl(this.allUser4),
       Timestamp:new FormControl(this.date),
       ModifiedBy: new FormControl(this.allUser4),

@@ -236,6 +236,21 @@
       "Timestamp": "9/14/2020, 1:06:46 PM",
       "ModifiedBy": "SRG-USER1",
       "ModifiedOn": "9/14/2020, 1:07:38 PM"
+    },
+    {
+      "name": "sams-user2",
+      "password": "revanth2",
+      "role": "sams",
+      "isActive": "yes",
+      "id": 8,
+      "contry": "India",
+      "city": "ananthapur",
+      "latitude": "14.6819",
+      "longitude": "77.6006",
+      "createdBy": "SRG-USER1",
+      "Timestamp": "9/17/2020, 5:57:31 PM",
+      "ModifiedBy": "SRG-USER1",
+      "ModifiedOn": "9/17/2020, 5:57:31 PM"
     }
   ]
 }

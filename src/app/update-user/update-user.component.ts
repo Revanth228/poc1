@@ -45,7 +45,7 @@ date=new Date().toLocaleString();
         city:new FormControl(result['city']),
         contry:new FormControl(result['contry']),
         latitude:new FormControl(result['latitude']),
-        logitude:new FormControl(result['logitude']),
+        longitude:new FormControl(result['longitude']),
         isActive:new FormControl(result['isActive']),
         createdBy:new FormControl(result['createdBy']),
         Timestamp:new FormControl(result['Timestamp']),

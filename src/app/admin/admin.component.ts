@@ -45,6 +45,7 @@ export class AdminComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    
      this.getlatestuser();
     this.getlatestuser2a();
     //  this.getlatestuser1();
