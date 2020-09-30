@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {CommonService} from '../service/common.service';
 import { Router,ActivatedRoute } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import * as XLSX from 'xlsx';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 @Component({
   selector: 'app-add-role',
   templateUrl: './add-role.component.html',
@@ -10,12 +12,13 @@ import { DatePipe } from '@angular/common';
 export class AddRoleComponent implements OnInit {
   isEdit=false;
   
-  
+  data:any;
   date = new Date().toLocaleString();
 userObj:any;
-  allUser: object;
+  allUser: any;
   allUser2;
   userDetails;
+  xcel_data:any[]=[];
    
   constructor(private commonService:CommonService,private router: Router,private act_router:ActivatedRoute ) { }
   allUser4:string;
@@ -38,7 +41,38 @@ userObj:any;
       
     }
   }
+  onFileChange(evt:any)
+  {
+    
+  const target : DataTransfer =<DataTransfer>(evt.target) ;
+  if(target.files.length !==1) throw new Error('Cannot use multiple files');
+  const reader : FileReader =new FileReader();
+  reader.onload =(e:any) =>{
+  const bstr:string =e.target.result;
+  const wb:XLSX.WorkBook = XLSX.read(bstr, {type:'binary'});
+  const wsname:string=wb.SheetNames[0];
+  const ws:XLSX.WorkSheet=wb.Sheets[wsname];
+  console.log(ws);
+   this.allUser=(XLSX.utils.sheet_to_json(ws));
  
+  console.log(this.allUser);
+  this.data=this.allUser;
+for(let x of this.data)
+{
+  console.log(x);
+  
+}
+ 
+console.log( 'hai this is',this.allUser);
+this.commonService.createUser(this.allUser).subscribe((response)=>{
+  this.getlatestuser();
+  alert("Data added Succesfully!!!")
+  this.router.navigate(["/admin/SRG/"+this.allUser4]);
+})
+
+  };
+  reader.readAsBinaryString(target.files[0]);
+  }
   createRole(myform)
   {
     console.log(myform);

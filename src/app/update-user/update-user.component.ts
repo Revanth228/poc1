@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./update-user.component.css']
 })
 export class UpdateUserComponent implements OnInit {
-allUser4;
+  allUser4;n
 
 date=new Date().toLocaleString();
   createUser=new FormGroup({

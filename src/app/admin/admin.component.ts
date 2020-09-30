@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router,ActivatedRoute } from '@angular/router';
 import { CommonService } from '../service/common.service';
-import { ReadVarExpr } from '@angular/compiler';
+import { ArrayType, ReadVarExpr } from '@angular/compiler';
 import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
-
+import { ExcelService } from '../service/ExcelService';
+import { dashCaseToCamelCase } from '@angular/compiler/src/util';
+// import * as XLSX from 'xlsx';
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
@@ -13,6 +15,7 @@ import { SafeResourceUrl, DomSanitizer } from '@angular/platform-browser';
   `
 })
 export class AdminComponent implements OnInit {
+  
   latitude =17.3850;
   longitude = 78.4867;
   url;
@@ -34,16 +37,27 @@ export class AdminComponent implements OnInit {
   history_table2=false;
   history_table3=false;
 
-  allUser: Object;
-  allUser1: Object;
- allUser2:object;
+  allUser: any;
+  allUser1: any;
+ allUser2:any;
   allUser3;
   allUser4: any;
-  constructor(private router: Router, private commonService:CommonService,private sanitizer: DomSanitizer,private act_router:ActivatedRoute)
+  
+ 
+  constructor(private router: Router, private commonService:CommonService,private sanitizer: DomSanitizer,private act_router:ActivatedRoute,private excelService: ExcelService )
    {
      this.url = sanitizer.bypassSecurityTrustResourceUrl('https://stock.walmart.com/investors/financial-information/annual-reports-and-proxies/default.aspx'); 
   }
-  
+  exportAsXLSX():void{
+    this.excelService.exportAsExcelFile(this.allUser,'sample')
+  }
+  exportAsXLSX2():void{
+    this.excelService.exportAsExcelFile(this.allUser1,'sample')
+  }
+  exportAsXLSX3():void{
+    this.excelService.exportAsExcelFile(this.allUser2,'sample')
+  }
+ 
   ngOnInit(): void {
     
      this.getlatestuser();
@@ -182,6 +196,23 @@ getlatestuser2a()  //this is used for getting the 'username' and 'id' from the u
   this.allUser4=this.act_router.snapshot.paramMap.get('user');
   
 }
+
+// onFileChange(evt:any)
+// {
+// const target : DataTransfer =<DataTransfer>(evt.target) ;
+// if(target.files.length !==1) throw new Error('Cannot use multiple files');
+// const reader : FileReader =new FileReader();
+// reader.onload =(e:any) =>{
+// const bstr:string =e.target.result;
+// const wb:XLSX.WorkBook = XLSX.read(bstr, {type:'binary'});
+// const wsname:string=wb.SheetNames[0];
+// const ws:XLSX.WorkSheet=wb.Sheets[wsname];
+// console.log(ws);
+// this.allUser=(XLSX.utils.sheet_to_json(ws));
+// console.log(this.allUser);
+// };
+// reader.readAsBinaryString(target.files[0]);
+// }
 test(user) 
 {
   let dumy:any = user;

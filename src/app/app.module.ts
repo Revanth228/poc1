@@ -19,6 +19,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { AgmCoreModule } from '@agm/core';
+import { ExcelService } from './service/ExcelService';
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +53,7 @@ import { AgmCoreModule } from '@agm/core';
   })
     
   ],
-  providers: [],
+  providers: [ExcelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

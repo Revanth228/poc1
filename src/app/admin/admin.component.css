@@ -145,6 +145,10 @@ margin-left: 300px;
     width: 100%;
     
 }
+.wrapper
+{
+    overflow-x: auto;
+}
 #frame1
 {
     margin-top: -600px;
@@ -206,6 +210,10 @@ margin-left: 300px;
     cursor: pointer;
     transition: 0.3s;
     font-size: 17px;
+}
+.tablescroll1
+{
+    overflow-x: auto;
 }
 #navi>button{
    
