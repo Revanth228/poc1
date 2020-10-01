@@ -2,8 +2,8 @@
     <h2 class="text-center"  style="color: whitesmoke;">Update dashboard</h2>
     <form  [formGroup]="userObj" (ngSubmit)="updateDash()">
       <div class="form-group">
-        <!-- <label for="name">Role:</label>
-        <input type="text" placeholder="Role" name="Rolename" class="form-control" id="name" formControlName="role" > -->
+         <label for="name"  style="color: whitesmoke;">Role:</label>
+        <!-- <input type="text" placeholder="Role" name="Rolename" class="form-control" id="name" formControlName="role" > --> 
         <select  id="role" name="role"  formControlName="role"  class="form-control">
           <option *ngFor="let user of allUser" [value]="user.Rolename">{{user.Rolename}}</option>
         </select>

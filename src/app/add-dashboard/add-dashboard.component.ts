@@ -28,7 +28,7 @@ export class AddDashboardComponent implements OnInit{
      pwb:new FormControl('',Validators.required),
       // password:'',
       id:new FormControl(''),
-      isActive:new FormControl('yes'),
+      isActive:new FormControl('no'),
       createdBy:new FormControl(this.allUser4),
       Timestamp:new FormControl(this.date),
       ModifiedBy: new FormControl(this.allUser4),

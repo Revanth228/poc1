@@ -9,6 +9,7 @@ URL1="http://localhost:3000/users1";
 URL2="http://localhost:3000/users2"
   constructor(private _http: HttpClient) { }
   createUser(user){
+    
     return this._http.post(this.URL,user);
   }
   getAllUser(){

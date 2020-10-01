@@ -57,18 +57,20 @@ userObj:any;
  
   console.log(this.allUser);
   this.data=this.allUser;
-for(let x of this.data)
+for(let x of this.allUser)
 {
   console.log(x);
-  
+  this.commonService.createUser(x).subscribe((response)=>{
+    this.getlatestuser();
+    alert("Data added Succesfully!!!")
+    this.router.navigate(["/admin/SRG/"+this.allUser4]);
+  },
+  error=>alert("The Role "+x.Rolename+"'s Id has duplicate value please check!!")
+  )
 }
  
 console.log( 'hai this is',this.allUser);
-this.commonService.createUser(this.allUser).subscribe((response)=>{
-  this.getlatestuser();
-  alert("Data added Succesfully!!!")
-  this.router.navigate(["/admin/SRG/"+this.allUser4]);
-})
+
 
   };
   reader.readAsBinaryString(target.files[0]);
