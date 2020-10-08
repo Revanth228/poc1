@@ -10,6 +10,7 @@ import { UpdateDashboardComponent } from './update-dashboard/update-dashboard.co
 import { RegisterComponent } from './register/register.component';
 import { TargetComponent } from './target/target.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { NotificationComponent } from './notification/notification.component';
 
 
 
@@ -24,7 +25,8 @@ const routes: Routes = [
   {path:'UpdateDashboard/:id/:user',component:UpdateDashboardComponent},
   {path:'register/:user',component:RegisterComponent},
   {path:'UpdateUser/:id/:user',component:UpdateUserComponent},
-  {path:'target',component:TargetComponent}
+  {path:'target',component:TargetComponent},
+  {path:'Notification/:id/:user',component:NotificationComponent}
 ];
 
 @NgModule({

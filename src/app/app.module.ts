@@ -20,6 +20,7 @@ import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { AgmCoreModule } from '@agm/core';
 import { ExcelService } from './service/ExcelService';
+import { NotificationComponent } from './notification/notification.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { ExcelService } from './service/ExcelService';
     UpdateDashboardComponent,
     RegisterComponent,
     TargetComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    NotificationComponent
     
     
   ],

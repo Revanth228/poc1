@@ -97,6 +97,16 @@ ul
     height: 620px;
     width: 90%;
 }
+#displaytable4 /* notification-table's div */
+{
+    position: static;
+    margin-left: 25px;
+    margin-top: -970px;
+    /* background-color: black; */
+    height: 620px;
+    width: 90%;
+    z-index: 99999;
+}
 #displaymap  /* Roles-table's div */
 {
     margin-left: 220px;

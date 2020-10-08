@@ -65,7 +65,7 @@ for(let x of this.allUser)
     alert("Data added Succesfully!!!")
     this.router.navigate(["/admin/SRG/"+this.allUser4]);
   },
-  error=>alert("The Role "+x.Rolename+"'s Id has duplicate value please check!!")
+   error=>alert("The Role "+x.Rolename+"'s Id has duplicate value please check!!")
   )
 }
  

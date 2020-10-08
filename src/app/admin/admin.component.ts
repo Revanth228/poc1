@@ -33,6 +33,8 @@ export class AdminComponent implements OnInit {
   table4=false;
   table5=false;
   table6=false;
+  table7=false;
+  
   history_table1=false;
   history_table2=false;
   history_table3=false;
@@ -62,6 +64,7 @@ export class AdminComponent implements OnInit {
     
      this.getlatestuser();
     this.getlatestuser2a();
+    // this.getlatestuser2();
     //  this.getlatestuser1();
   }
   Onfunction1 (nr)
@@ -98,6 +101,7 @@ else
     this. table4=false;
     this.table5=false;
     this.table6=false;
+    this.table7=false;
   }else if(nr==2){
 
     this.table1=false;
@@ -106,6 +110,7 @@ else
     this. table4=false;
     this.table5=false;
     this.table6=false;
+    this.table7=false;
 
   }else if(nr==3){
     this.table1=false;
@@ -114,6 +119,7 @@ else
     this. table4=false;
     this.table5=false;
     this.table6=false;
+    this.table7=false;
   }
   else if(nr==4)
   {
@@ -123,6 +129,7 @@ else
     this. table4=true;
     this.table5=false;
     this.table6=false;
+    this.table7=false;
   }
   else if(nr==5)
   {
@@ -132,8 +139,9 @@ else
     this. table4=false;
     this.table5=true;
     this.table6=false;
+    this.table7=false;
   }
- else
+ else if(nr==6)
  {
   this.table1=false;
   this. table2=false;
@@ -141,8 +149,18 @@ else
   this. table4=false;
   this.table5=false;
   this.table6=true;
+  this.table7=false;
  }
-    
+    else
+    {
+      this.table1=false;
+  this. table2=false;
+  this. table3=false;
+  this. table4=false;
+  this.table5=false;
+  this.table6=false;
+  this.table7=true;
+    }
  }
  getlatestuser()  //getting the roles table details from the json server
  {
